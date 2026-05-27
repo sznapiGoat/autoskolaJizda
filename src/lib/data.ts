@@ -234,6 +234,103 @@ export const TESTIMONIALS = [
   },
 ];
 
+export const WHY_US = [
+  {
+    id: "fleet",
+    icon: "Car",
+    title: "Moderní klimatizovaná vozidla",
+    body: "Výcvik probíhá výhradně na moderních, klimatizovaných vozidlech. Komfort a bezpečí jsou samozřejmostí.",
+  },
+  {
+    id: "approach",
+    icon: "HeartHandshake",
+    title: "Klidný a lidský přístup",
+    body: "Všichni naši instruktoři mají dlouholetou praxi. Výuka probíhá v klidu, bez zbytečného stresu a tlaku.",
+  },
+  {
+    id: "materials",
+    icon: "GraduationCap",
+    title: "Materiály v ceně (500 Kč)",
+    body: "Veškeré učební pomůcky v hodnotě cca 500 Kč jsou součástí každého kurzu. Nic dalšího kupovat nemusíte.",
+  },
+  {
+    id: "psycholog",
+    icon: "Brain",
+    title: "Dopravní psycholog",
+    body: "Externě spolupracujeme s dopravním psychologem — zajistíme dopravně-psychologické vyšetření přímo za vás.",
+  },
+  {
+    id: "success",
+    icon: "Trophy",
+    title: "Vysoká úspěšnost u zkoušek",
+    body: "Naši žáci dosahují u zkoušek velmi dobrých výsledků. Pečlivá příprava se vyplatí.",
+  },
+  {
+    id: "theory",
+    icon: "BookOpenCheck",
+    title: "Pravidelná teoretická výuka",
+    body: "Teorie probíhá formou přednášek na učebně. Praktický výcvik od rána do večera — dle vašich možností.",
+  },
+];
+
+export const LANGUAGES = [
+  { code: "ar", name: "Arabština", flag: "🇸🇦" },
+  { code: "vi", name: "Vietnamština", flag: "🇻🇳" },
+  { code: "ru", name: "Ruština", flag: "🇷🇺" },
+  { code: "en", name: "Angličtina", flag: "🇬🇧" },
+  { code: "zh", name: "Čínština", flag: "🇨🇳" },
+];
+
+export const RESOURCES_EXTERNAL = [
+  {
+    id: "etesty",
+    label: "Testové otázky (etesty2.mdcr.cz)",
+    description: "Oficiální testové otázky Ministerstva dopravy ČR",
+    href: "https://etesty2.mdcr.cz/",
+  },
+  {
+    id: "schroter",
+    label: "Přehled autoškol (schroter.cz)",
+    description: "Databáze autoškol Středočeského kraje a okolí",
+    href: "http://www.schroter.cz/uvod17/prehled-as.htm#_stredocesky",
+  },
+  {
+    id: "zakony",
+    label: "Zákonyprolidi.cz",
+    description: "Zákon č. 247/2000 Sb. a předpisy silničního provozu",
+    href: "https://www.zakonyprolidi.cz/",
+  },
+  {
+    id: "besip",
+    label: "BESIP — bezpečnost silničního provozu",
+    description: "Officiální portál Ministerstva dopravy o bezpečnosti",
+    href: "https://besip.cz/",
+  },
+  {
+    id: "bezpecne",
+    label: "Bezpečné cesty",
+    description: "Vzdělávání a osvěta v oblasti bezpečnosti dopravy",
+    href: "https://www.bezpecnecesty.cz/",
+  },
+];
+
+export const RESOURCES_DOWNLOADS = [
+  {
+    id: "zadost",
+    label: "Žádost o přijetí k výuce a výcviku",
+    description: "Formulář dle vyhlášky č. 284/2013 Sb.",
+    href: "http://www.schroter.cz/samsou/zadost-dle-284-2013.pdf",
+    filename: "zadost-284-2013.pdf",
+  },
+  {
+    id: "lekarsky",
+    label: "Lékařský posudek",
+    description: "Formulář dle vyhlášky č. 271/2015 Sb.",
+    href: "http://www.schroter.cz/samsou/posudek-dle-271-2015.pdf",
+    filename: "posudek-271-2015.pdf",
+  },
+];
+
 export const FAQ_ITEMS = [
   {
     id: "q1",

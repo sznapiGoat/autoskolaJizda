@@ -97,6 +97,8 @@ const schemaOrg = {
   paymentAccepted: "Cash, Bank transfer",
 };
 
+import AnnouncementBar from "@/components/sections/AnnouncementBar";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -112,6 +114,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-dvh bg-white text-[#111827] antialiased">
+        <AnnouncementBar />
         {children}
       </body>
     </html>

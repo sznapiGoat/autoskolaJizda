@@ -7,10 +7,10 @@ import { SITE } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { label: "Kurzy", href: "#kurzy" },
+  { label: "Jazyky", href: "#jazyky" },
   { label: "Ceník", href: "#cenik" },
+  { label: "Portál", href: "#portal" },
   { label: "Recenze", href: "#recenze" },
-  { label: "FAQ", href: "#faq" },
   { label: "Kontakt", href: "#kontakt" },
 ];
 
