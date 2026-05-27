@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Check, ArrowRight } from "lucide-react";
-import { PRICING_TIERS, MUNICIPALITY_FEES, CANCELLATION_POLICY, CONDITIONAL_FEES, KONDICE_FEES } from "@/lib/data";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 import { AlertCircle, CheckCircle2 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import {
+  PRICING_TIERS,
+  MUNICIPALITY_FEES,
+  CANCELLATION_POLICY,
+  CONDITIONAL_FEES,
+  KONDICE_FEES,
+} from "@/lib/data";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 export const metadata: Metadata = {
-  title: "Ceník kurzů",
+  title: "Ceník",
   description:
-    "Transparentní ceník kurzů autoškoly Jízda v Rakovníku. Kurz skupiny B od 17 000 Kč, Exclusive s výukou v cizím jazyce od 40 000 Kč. Správní poplatky a podmínky storna.",
+    "Ceník kurzů Autoškoly Jízda Rakovník. Kurz skupiny B od 17 000 Kč, výuka v cizím jazyce od 40 000 Kč. Správní poplatky a podmínky storna.",
 };
 
 function formatPrice(price: number) {
@@ -20,305 +24,191 @@ function formatPrice(price: number) {
   }).format(price);
 }
 
-const GROUP_B = PRICING_TIERS.filter((t) => t.id === "basic" || t.id === "standard");
-const FOREIGN_LANG = PRICING_TIERS.filter((t) => t.id === "exclusive" || t.id === "vip");
-
-function PricingCard({
-  tier,
-  detailHref,
-}: {
-  tier: (typeof PRICING_TIERS)[0];
-  detailHref: string;
-}) {
-  return (
-    <article
-      className={cn(
-        "relative flex flex-col rounded-xl border bg-white p-8 h-full",
-        tier.highlighted
-          ? "border-[#047857] shadow-md ring-1 ring-[#047857]"
-          : "border-[#e5e7eb] shadow-sm"
-      )}
-      aria-label={`Kurz ${tier.name}, ${formatPrice(tier.price)}`}
-    >
-      {tier.badge && (
-        <div className="absolute -top-3 left-6">
-          <span
-            className={cn(
-              "text-[11px] font-semibold px-2.5 py-0.5 rounded-full",
-              tier.highlighted
-                ? "bg-[#047857] text-white"
-                : "bg-[#f0fdf4] text-[#047857] border border-[#bbf7d0]"
-            )}
-          >
-            {tier.badge}
-          </span>
-        </div>
-      )}
-      <h3 className="text-xl font-bold text-[#111827] mb-1">{tier.name}</h3>
-      <p className="text-[2.25rem] font-bold text-[#111827] leading-none mb-2">
-        {formatPrice(tier.price)}
-      </p>
-      <p className="text-sm text-[#6b7280] mb-6 leading-relaxed">{tier.description}</p>
-      <ul className="flex flex-col gap-2 mb-8" aria-label="Součásti kurzu">
-        {tier.features.map((f) => (
-          <li key={f} className="flex items-start gap-2.5 text-sm text-[#374151]">
-            <Check size={15} className="text-[#047857] mt-0.5 shrink-0" aria-hidden="true" />
-            <span>{f}</span>
-          </li>
-        ))}
-      </ul>
-      <Link
-        href="/kontakt"
-        className={cn(
-          "block text-center text-sm font-semibold py-3 px-4 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] focus-visible:ring-offset-2",
-          tier.highlighted
-            ? "bg-[#047857] text-white hover:bg-[#065f46]"
-            : "border border-[#e5e7eb] text-[#111827] hover:bg-[#f9fafb]"
-        )}
-      >
-        Mám zájem
-      </Link>
-      <Link
-        href={detailHref}
-        className="mt-3 text-center text-xs text-[#6b7280] hover:text-[#047857] transition-colors"
-      >
-        Zjistit více →
-      </Link>
-    </article>
-  );
-}
-
 export default function CenikPage() {
   return (
-    <main id="main-content">
-      {/* Hero */}
-      <section className="bg-white pt-36 pb-16 sm:pb-20" aria-labelledby="cenik-heading">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn direction="up" className="max-w-2xl">
-            <p className="text-sm font-semibold text-[#047857] uppercase tracking-widest mb-3">
-              Ceník
-            </p>
-            <h1
-              id="cenik-heading"
-              className="text-4xl sm:text-5xl font-bold text-[#111827] tracking-tight leading-[1.1] mb-5"
-            >
-              Transparentní ceny bez překvapení
-            </h1>
-            <p className="text-[1.125rem] text-[#4b5563] leading-relaxed">
-              Veškeré učební materiály (hodnota cca 500 Kč) jsou součástí každého kurzu.
-              Správní poplatky se hradí přímo na magistrátu — přehled níže.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+    <main id="main-content" className="bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-24">
 
-      {/* Výcvik skupiny B */}
-      <section className="bg-[#f9fafb] py-16 sm:py-20" aria-labelledby="b-heading">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn direction="up" className="mb-10">
-            <div className="flex items-center justify-between flex-wrap gap-4">
-              <div>
-                <p className="text-xs font-semibold text-[#047857] uppercase tracking-widest mb-1">
-                  Skupina B
-                </p>
-                <h2
-                  id="b-heading"
-                  className="text-2xl sm:text-3xl font-bold text-[#111827]"
-                >
-                  Výcvik skupiny B
-                </h2>
-              </div>
-              <Link
-                href="/vycvik-b"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#047857] hover:text-[#065f46] transition-colors"
-              >
-                Detail kurzu
-                <ArrowRight size={14} aria-hidden="true" />
-              </Link>
-            </div>
-          </FadeIn>
-          <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {GROUP_B.map((tier) => (
-              <StaggerItem key={tier.id}>
-                <PricingCard tier={tier} detailHref="/vycvik-b" />
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
+        {/* Page title */}
+        <FadeIn direction="up" className="mb-12">
+          <h1 className="text-3xl font-bold text-[#111827] mb-2">Ceník</h1>
+          <p className="text-[#6b7280] text-[0.9375rem]">
+            Všechny ceny jsou uvedeny včetně DPH. Učební materiály (cca 500 Kč) jsou součástí
+            každého kurzu. Správní poplatky se hradí přímo na magistrátu.
+          </p>
+        </FadeIn>
 
-      {/* Exclusive & VIP */}
-      <section className="bg-white py-16 sm:py-20" aria-labelledby="exclusive-heading">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn direction="up" className="mb-10">
-            <div className="flex items-center justify-between flex-wrap gap-4">
-              <div>
-                <p className="text-xs font-semibold text-[#047857] uppercase tracking-widest mb-1">
-                  Výuka v cizím jazyce
-                </p>
-                <h2
-                  id="exclusive-heading"
-                  className="text-2xl sm:text-3xl font-bold text-[#111827]"
-                >
-                  Exclusive &amp; VIP
-                </h2>
-              </div>
-              <Link
-                href="/exclusive"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#047857] hover:text-[#065f46] transition-colors"
-              >
-                Detail kurzu
-                <ArrowRight size={14} aria-hidden="true" />
-              </Link>
-            </div>
-          </FadeIn>
-          <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {FOREIGN_LANG.map((tier) => (
-              <StaggerItem key={tier.id}>
-                <PricingCard tier={tier} detailHref="/exclusive" />
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
+        {/* Kurzy skupiny B */}
+        <FadeIn direction="up" className="mb-10">
+          <h2 className="text-lg font-semibold text-[#111827] mb-4 pb-2 border-b border-[#e5e7eb]">
+            Kurzy skupiny B
+          </h2>
+          <table className="w-full text-sm" aria-label="Ceník kurzů skupiny B">
+            <thead>
+              <tr>
+                <th scope="col" className="text-left font-semibold text-[#374151] pb-2 pr-4">Kurz</th>
+                <th scope="col" className="text-left font-semibold text-[#374151] pb-2 pr-4">Cena</th>
+                <th scope="col" className="text-left font-semibold text-[#374151] pb-2">Popis</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-[#f3f4f6]">
+              {PRICING_TIERS.filter((t) => t.id === "basic" || t.id === "standard").map((tier) => (
+                <tr key={tier.id}>
+                  <td className="py-3 pr-4 font-medium text-[#111827] align-top whitespace-nowrap">
+                    {tier.name}
+                  </td>
+                  <td className="py-3 pr-4 text-[#111827] font-semibold align-top whitespace-nowrap">
+                    {formatPrice(tier.price)}
+                  </td>
+                  <td className="py-3 text-[#6b7280] align-top leading-relaxed">
+                    {tier.description}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="mt-3 text-xs text-[#6b7280]">
+            Záloha 3 000 Kč splatná při podpisu smlouvy. Zbytek před zahájením výcviku nebo ve splátkách po dohodě.{" "}
+            <Link href="/kurzy" className="text-[#047857] hover:underline">Detail kurzů →</Link>
+          </p>
+        </FadeIn>
 
-      {/* Conditional fees + kondiční jízdy */}
-      <section className="bg-[#f9fafb] py-16 sm:py-20" aria-labelledby="dalsi-heading">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn direction="up" className="max-w-2xl mb-10">
-            <h2 id="dalsi-heading" className="text-2xl font-bold text-[#111827] mb-2">
-              Další služby
-            </h2>
-          </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <FadeIn direction="left">
-              <div className="rounded-xl border border-[#e5e7eb] bg-white p-7">
-                <h3 className="text-base font-semibold text-[#111827] mb-5">Vrácení ŘP</h3>
-                <ul className="flex flex-col gap-4">
-                  {CONDITIONAL_FEES.map((fee) => (
-                    <li key={fee.item} className="flex items-start justify-between gap-4">
-                      <div>
-                        <p className="text-sm font-medium text-[#111827]">{fee.item}</p>
-                        {fee.note && (
-                          <p className="text-xs text-[#6b7280] mt-0.5">{fee.note}</p>
-                        )}
-                      </div>
-                      <span className="shrink-0 text-sm font-semibold text-[#047857]">
-                        {fee.price}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-            <FadeIn direction="right">
-              <div className="rounded-xl border border-[#e5e7eb] bg-white p-7">
-                <h3 className="text-base font-semibold text-[#111827] mb-5">Kondiční jízdy</h3>
-                <ul className="flex flex-col gap-3">
-                  {KONDICE_FEES.map((k) => (
-                    <li
-                      key={k.duration}
-                      className="flex items-center justify-between border-b border-[#e5e7eb] pb-3 last:border-0 last:pb-0"
-                    >
-                      <span className="text-sm text-[#374151]">{k.duration}</span>
-                      <span className="text-sm font-semibold text-[#047857]">{k.price}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
+        {/* Kurzy v cizím jazyce */}
+        <FadeIn direction="up" className="mb-10">
+          <h2 className="text-lg font-semibold text-[#111827] mb-4 pb-2 border-b border-[#e5e7eb]">
+            Výuka v cizím jazyce
+          </h2>
+          <table className="w-full text-sm" aria-label="Ceník kurzů v cizím jazyce">
+            <thead>
+              <tr>
+                <th scope="col" className="text-left font-semibold text-[#374151] pb-2 pr-4">Kurz</th>
+                <th scope="col" className="text-left font-semibold text-[#374151] pb-2 pr-4">Cena</th>
+                <th scope="col" className="text-left font-semibold text-[#374151] pb-2">Popis</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-[#f3f4f6]">
+              {PRICING_TIERS.filter((t) => t.id === "exclusive" || t.id === "vip").map((tier) => (
+                <tr key={tier.id}>
+                  <td className="py-3 pr-4 font-medium text-[#111827] align-top whitespace-nowrap">
+                    {tier.name}
+                  </td>
+                  <td className="py-3 pr-4 text-[#111827] font-semibold align-top whitespace-nowrap">
+                    {formatPrice(tier.price)}
+                  </td>
+                  <td className="py-3 text-[#6b7280] align-top leading-relaxed">
+                    {tier.description}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="mt-3 text-xs text-[#6b7280]">
+            Arabština, vietnamština, ruština, angličtina, čínština — tlumočník zajištěn v ceně.{" "}
+            <Link href="/exclusive" className="text-[#047857] hover:underline">Více informací →</Link>
+          </p>
+        </FadeIn>
 
-      {/* Administrative fees + cancellation */}
-      <section className="bg-white py-16 sm:py-20" aria-labelledby="poplatky-heading">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn direction="up" className="max-w-2xl mb-10">
-            <h2 id="poplatky-heading" className="text-2xl font-bold text-[#111827] mb-2">
-              Správní poplatky &amp; podmínky
-            </h2>
-            <p className="text-sm text-[#6b7280]">
-              Správní poplatky jsou hrazeny přímo na příslušném magistrátu — nejsou součástí
-              ceny kurzu.
-            </p>
-          </FadeIn>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <FadeIn direction="left">
-              <div className="rounded-xl border border-[#e5e7eb] overflow-hidden">
-                <table className="w-full text-sm" aria-label="Přehled správních poplatků">
-                  <thead>
-                    <tr className="bg-[#f3f4f6]">
-                      <th scope="col" className="px-5 py-3 text-left text-xs font-semibold text-[#6b7280] uppercase tracking-wide">Položka</th>
-                      <th scope="col" className="px-5 py-3 text-right text-xs font-semibold text-[#6b7280] uppercase tracking-wide">Poplatek</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-[#e5e7eb] bg-white">
-                    {MUNICIPALITY_FEES.map((fee) => (
-                      <tr key={fee.item} className="hover:bg-[#f9fafb]">
-                        <td className="px-5 py-4 text-[#374151]">{fee.item}</td>
-                        <td className="px-5 py-4 text-right font-semibold text-[#111827]">{fee.amount}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-                <p className="px-5 py-3 text-xs text-[#6b7280] bg-[#f9fafb]">
-                  * Poplatky se mohou měnit. Aktuální sazby ověřte na magistrátu.
-                </p>
-              </div>
-            </FadeIn>
-            <FadeIn direction="right">
-              <div>
-                <h3 className="text-base font-semibold text-[#111827] mb-4">
-                  Podmínky zrušení jízdy
-                </h3>
-                <ul className="flex flex-col gap-3">
-                  {CANCELLATION_POLICY.map((rule) => {
-                    const isGreen = rule.color === "green";
-                    return (
-                      <li
-                        key={rule.condition}
-                        className="flex items-start gap-3 rounded-lg border border-[#e5e7eb] bg-white px-5 py-4"
-                      >
-                        {isGreen ? (
-                          <CheckCircle2 size={17} className="text-[#047857] mt-0.5 shrink-0" aria-hidden="true" />
-                        ) : (
-                          <AlertCircle size={17} className="text-[#dc2626] mt-0.5 shrink-0" aria-hidden="true" />
-                        )}
-                        <div>
-                          <p className="text-sm font-medium text-[#111827]">{rule.condition}</p>
-                          <p className={`text-sm mt-0.5 font-semibold ${isGreen ? "text-[#047857]" : "text-[#dc2626]"}`}>
-                            {rule.consequence}
-                          </p>
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
+        {/* Vrácení ŘP */}
+        <FadeIn direction="up" className="mb-10">
+          <h2 className="text-lg font-semibold text-[#111827] mb-4 pb-2 border-b border-[#e5e7eb]">
+            Vrácení řidičského průkazu
+          </h2>
+          <table className="w-full text-sm" aria-label="Ceník vrácení ŘP">
+            <tbody className="divide-y divide-[#f3f4f6]">
+              {CONDITIONAL_FEES.map((fee) => (
+                <tr key={fee.item}>
+                  <td className="py-3 pr-4 text-[#374151] align-top">{fee.item}</td>
+                  <td className="py-3 pr-4 font-semibold text-[#111827] align-top whitespace-nowrap">
+                    {fee.price}
+                  </td>
+                  {fee.note && (
+                    <td className="py-3 text-[#6b7280] text-xs align-top">{fee.note}</td>
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </FadeIn>
 
-      {/* CTA */}
-      <section className="bg-[#047857] py-14 sm:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn direction="up">
-            <h2 className="text-2xl font-bold text-white mb-3">Připraveni začít?</h2>
-            <p className="text-[#bbf7d0] mb-7">
-              Zapište se dnes — volejte kdykoliv, odpovídáme rychle.
-            </p>
-            <Link
-              href="/kontakt"
-              className="inline-flex items-center gap-2 bg-white text-[#047857] text-[1rem] font-bold px-8 py-3.5 rounded-md hover:bg-[#f0fdf4] transition-colors"
-            >
-              Kontaktovat autoškolu
-              <ArrowRight size={16} aria-hidden="true" />
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
+        {/* Kondiční jízdy */}
+        <FadeIn direction="up" className="mb-10">
+          <h2 className="text-lg font-semibold text-[#111827] mb-4 pb-2 border-b border-[#e5e7eb]">
+            Kondiční jízdy
+          </h2>
+          <table className="w-full text-sm" aria-label="Ceník kondičních jízd">
+            <tbody className="divide-y divide-[#f3f4f6]">
+              {KONDICE_FEES.map((k) => (
+                <tr key={k.duration}>
+                  <td className="py-3 pr-4 text-[#374151]">{k.duration}</td>
+                  <td className="py-3 font-semibold text-[#111827]">{k.price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </FadeIn>
+
+        {/* Správní poplatky */}
+        <FadeIn direction="up" className="mb-10">
+          <h2 className="text-lg font-semibold text-[#111827] mb-2 pb-2 border-b border-[#e5e7eb]">
+            Správní poplatky (magistrát)
+          </h2>
+          <p className="text-xs text-[#6b7280] mb-4">
+            Níže uvedené poplatky se hradí přímo na příslušném magistrátu — nejsou součástí ceny kurzu.
+          </p>
+          <table className="w-full text-sm" aria-label="Přehled správních poplatků">
+            <tbody className="divide-y divide-[#f3f4f6]">
+              {MUNICIPALITY_FEES.map((fee) => (
+                <tr key={fee.item}>
+                  <td className="py-3 pr-4 text-[#374151]">{fee.item}</td>
+                  <td className="py-3 font-semibold text-[#111827] whitespace-nowrap">{fee.amount}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="mt-2 text-xs text-[#6b7280]">
+            Sazby poplatků se mohou měnit na základě platných vyhlášek.
+          </p>
+        </FadeIn>
+
+        {/* Podmínky storna */}
+        <FadeIn direction="up" className="mb-10">
+          <h2 className="text-lg font-semibold text-[#111827] mb-4 pb-2 border-b border-[#e5e7eb]">
+            Podmínky zrušení jízdy
+          </h2>
+          <ul className="flex flex-col gap-2.5">
+            {CANCELLATION_POLICY.map((rule) => {
+              const ok = rule.color === "green";
+              return (
+                <li key={rule.condition} className="flex items-start gap-3 text-sm">
+                  {ok ? (
+                    <CheckCircle2 size={15} className="text-[#047857] mt-0.5 shrink-0" aria-hidden="true" />
+                  ) : (
+                    <AlertCircle size={15} className="text-[#dc2626] mt-0.5 shrink-0" aria-hidden="true" />
+                  )}
+                  <div>
+                    <span className="text-[#374151]">{rule.condition} — </span>
+                    <span className={`font-semibold ${ok ? "text-[#047857]" : "text-[#dc2626]"}`}>
+                      {rule.consequence}
+                    </span>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </FadeIn>
+
+        {/* Platba */}
+        <FadeIn direction="up">
+          <h2 className="text-lg font-semibold text-[#111827] mb-3 pb-2 border-b border-[#e5e7eb]">
+            Způsob platby
+          </h2>
+          <p className="text-sm text-[#374151] leading-relaxed">
+            Hotově nebo bankovním převodem na účet <span className="font-semibold">2801649861/2010</span> (Fio Banka).
+            Platba ve splátkách po dohodě.
+          </p>
+        </FadeIn>
+
+      </div>
     </main>
   );
 }

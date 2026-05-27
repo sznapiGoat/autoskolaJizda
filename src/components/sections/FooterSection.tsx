@@ -3,7 +3,7 @@ import { Phone, Mail } from "lucide-react";
 import { SITE } from "@/lib/data";
 
 const LINKS = [
-  { label: "Výcvik skupiny B", href: "/vycvik-b" },
+  { label: "Kurzy", href: "/kurzy" },
   { label: "Exclusive", href: "/exclusive" },
   { label: "Ceník", href: "/cenik" },
   { label: "O nás", href: "/o-nas" },

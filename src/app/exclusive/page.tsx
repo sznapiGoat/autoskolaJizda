@@ -185,8 +185,8 @@ export default function ExclusivePage() {
           <FadeIn direction="up" className="mt-10">
             <p className="text-sm text-[#6b7280]">
               Hledáte standardní kurz skupiny B?{" "}
-              <Link href="/vycvik-b" className="text-[#047857] font-semibold hover:underline">
-                Prohlédněte si ceník Basic a Standard →
+              <Link href="/kurzy" className="text-[#047857] font-semibold hover:underline">
+                Prohlédněte si ceník Basic a Standard
               </Link>
             </p>
           </FadeIn>

@@ -13,7 +13,7 @@ const VIEWPORTS = [
 
 const PAGES = [
   { name: 'home',      path: '/' },
-  { name: 'vycvik-b',  path: '/vycvik-b' },
+  { name: 'kurzy',     path: '/kurzy' },
   { name: 'exclusive', path: '/exclusive' },
   { name: 'cenik',     path: '/cenik' },
   { name: 'o-nas',     path: '/o-nas' },

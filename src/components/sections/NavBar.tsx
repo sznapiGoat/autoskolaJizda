@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { label: "Výcvik B", href: "/vycvik-b" },
+  { label: "Kurzy", href: "/kurzy" },
   { label: "Exclusive", href: "/exclusive" },
   { label: "Ceník", href: "/cenik" },
   { label: "O nás", href: "/o-nas" },

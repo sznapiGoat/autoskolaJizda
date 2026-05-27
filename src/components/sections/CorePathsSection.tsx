@@ -5,9 +5,9 @@ import { FadeIn } from "@/components/ui/FadeIn";
 
 const PATHS = [
   {
-    href: "/vycvik-b",
+    href: "/kurzy",
     Icon: Car,
-    label: "Výcvik skupiny B",
+    label: "Kurzy",
     desc: "Kompletní kurz řidičského průkazu skupiny B. Klidný instruktor, klimatizovaná vozidla, individuální přístup a vysoká úspěšnost u zkoušek.",
     cta: "Zjistit více",
     highlighted: false,
