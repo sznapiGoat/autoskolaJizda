@@ -110,7 +110,7 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-3 mb-8"
             >
               <a
-                href="#kontakt"
+                href="/kontakt"
                 className="group inline-flex items-center justify-center gap-2 bg-[#047857] text-white text-[1rem] font-semibold px-7 py-3.5 rounded-md hover:bg-[#065f46] transition-all hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] focus-visible:ring-offset-2"
               >
                 Chci začít jezdit

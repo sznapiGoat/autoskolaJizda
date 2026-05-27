@@ -98,6 +98,8 @@ const schemaOrg = {
 };
 
 import AnnouncementBar from "@/components/sections/AnnouncementBar";
+import NavBar from "@/components/sections/NavBar";
+import FooterSection from "@/components/sections/FooterSection";
 
 export default function RootLayout({
   children,
@@ -115,7 +117,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-dvh bg-white text-[#111827] antialiased">
         <AnnouncementBar />
+        <NavBar />
         {children}
+        <FooterSection />
       </body>
     </html>
   );

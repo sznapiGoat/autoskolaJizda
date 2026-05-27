@@ -89,7 +89,7 @@ export default function PricingSection() {
                 </ul>
 
                 <a
-                  href="#kontakt"
+                  href="/kontakt"
                   className={cn(
                     "mt-7 block text-center text-sm font-semibold py-2.5 px-4 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] focus-visible:ring-offset-2",
                     tier.highlighted

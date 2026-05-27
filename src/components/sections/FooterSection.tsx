@@ -3,11 +3,10 @@ import { Phone, Mail } from "lucide-react";
 import { SITE } from "@/lib/data";
 
 const LINKS = [
-  { label: "Kurzy", href: "#kurzy" },
-  { label: "Ceník", href: "#cenik" },
-  { label: "Recenze", href: "#recenze" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Výcvik skupiny B", href: "/vycvik-b" },
+  { label: "Exclusive", href: "/exclusive" },
+  { label: "Pro studenty", href: "/studenti" },
+  { label: "Kontakt", href: "/kontakt" },
 ];
 
 const EXTERNAL = [

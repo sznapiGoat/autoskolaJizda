@@ -1,9 +1,9 @@
 {
   "desktop": {
     "h1Count": 1,
-    "h1Text": "Řidičský průkaz\ns jistotou — v Rakovníku.",
+    "h1Text": "Řidičskýprůkaz\ns jistotou—v Rakovníku.",
     "bodyFontSize": "16px",
-    "h1FontSize": "68px",
+    "h1FontSize": "64px",
     "ctaVisible": true,
     "phoneVisible": true,
     "navVisible": true

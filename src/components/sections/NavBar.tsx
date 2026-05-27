@@ -2,21 +2,21 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Phone, Menu, X } from "lucide-react";
 import { SITE } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { label: "Jazyky", href: "#jazyky" },
-  { label: "Ceník", href: "#cenik" },
-  { label: "Portál", href: "#portal" },
-  { label: "Recenze", href: "#recenze" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Výcvik skupiny B", href: "/vycvik-b" },
+  { label: "Exclusive", href: "/exclusive" },
+  { label: "Pro studenty", href: "/studenti" },
 ];
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -35,13 +35,12 @@ export default function NavBar() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo / wordmark — scrolls to top */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          {/* Logo / wordmark */}
+          <Link
+            href="/"
             className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] rounded-md"
-            aria-label="Zpět na začátek stránky"
+            aria-label="Autoškola Jízda — domovská stránka"
           >
-            {/* L-plate badge */}
             <span
               className="w-8 h-8 flex items-center justify-center rounded bg-[#047857] text-white text-sm font-black leading-none select-none shrink-0 group-hover:bg-[#065f46] transition-colors"
               aria-hidden="true"
@@ -56,7 +55,7 @@ export default function NavBar() {
                 Rakovník
               </span>
             </span>
-          </button>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-6" aria-label="Hlavní navigace">
@@ -64,22 +63,41 @@ export default function NavBar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-[#374151] hover:text-[#047857] transition-colors"
+                className={cn(
+                  "text-sm font-medium transition-colors",
+                  pathname === link.href
+                    ? "text-[#047857]"
+                    : "text-[#374151] hover:text-[#047857]"
+                )}
+                aria-current={pathname === link.href ? "page" : undefined}
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          {/* CTA phone */}
-          <a
-            href={`tel:${SITE.phonePlain}`}
-            className="hidden md:flex items-center gap-2 bg-[#047857] text-white text-sm font-semibold px-4 py-2 rounded-md hover:bg-[#065f46] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] focus-visible:ring-offset-2"
-            aria-label={`Zavolejte nám: ${SITE.phone}`}
-          >
-            <Phone size={15} aria-hidden="true" />
-            {SITE.phone}
-          </a>
+          <div className="hidden md:flex items-center gap-3">
+            <Link
+              href="/kontakt"
+              className={cn(
+                "text-sm font-semibold px-4 py-2 rounded-md border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] focus-visible:ring-offset-2",
+                pathname === "/kontakt"
+                  ? "bg-[#065f46] text-white border-[#065f46]"
+                  : "bg-[#047857] text-white border-[#047857] hover:bg-[#065f46]"
+              )}
+              aria-current={pathname === "/kontakt" ? "page" : undefined}
+            >
+              Kontakt
+            </Link>
+            <a
+              href={`tel:${SITE.phonePlain}`}
+              className="flex items-center gap-2 text-sm font-semibold text-[#374151] hover:text-[#047857] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] rounded-md px-2 py-1"
+              aria-label={`Zavolejte nám: ${SITE.phone}`}
+            >
+              <Phone size={15} aria-hidden="true" />
+              {SITE.phone}
+            </a>
+          </div>
 
           {/* Mobile hamburger */}
           <button
@@ -104,22 +122,44 @@ export default function NavBar() {
             className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1"
             aria-label="Mobilní navigace"
           >
-            <button
-              onClick={() => { window.scrollTo({ top: 0, behavior: "smooth" }); setOpen(false); }}
-              className="text-[17px] font-semibold text-[#047857] py-3 px-2 text-left"
+            <Link
+              href="/"
+              onClick={() => setOpen(false)}
+              className={cn(
+                "text-[17px] font-semibold py-3 px-2 rounded hover:bg-[#f9fafb] transition-colors",
+                pathname === "/" ? "text-[#047857]" : "text-[#111827] hover:text-[#047857]"
+              )}
             >
-              ↑ Zpět na začátek
-            </button>
+              Domů
+            </Link>
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-[17px] font-medium text-[#111827] py-3 px-2 rounded hover:bg-[#f9fafb] hover:text-[#047857] transition-colors"
+                className={cn(
+                  "text-[17px] font-medium py-3 px-2 rounded hover:bg-[#f9fafb] transition-colors",
+                  pathname === link.href
+                    ? "text-[#047857]"
+                    : "text-[#111827] hover:text-[#047857]"
+                )}
+                aria-current={pathname === link.href ? "page" : undefined}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
+            <Link
+              href="/kontakt"
+              onClick={() => setOpen(false)}
+              className={cn(
+                "text-[17px] font-medium py-3 px-2 rounded hover:bg-[#f9fafb] transition-colors",
+                pathname === "/kontakt"
+                  ? "text-[#047857]"
+                  : "text-[#111827] hover:text-[#047857]"
+              )}
+            >
+              Kontakt
+            </Link>
             <a
               href={`tel:${SITE.phonePlain}`}
               className="mt-3 flex items-center justify-center gap-2 bg-[#047857] text-white text-[17px] font-semibold py-3 rounded-md"
