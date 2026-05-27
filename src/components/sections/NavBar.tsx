@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, Menu, X } from "lucide-react";
-import { SITE } from "@/lib/data";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { label: "Výcvik skupiny B", href: "/vycvik-b" },
+  { label: "Výcvik B", href: "/vycvik-b" },
   { label: "Exclusive", href: "/exclusive" },
-  { label: "Pro studenty", href: "/studenti" },
+  { label: "Ceník", href: "/cenik" },
+  { label: "O nás", href: "/o-nas" },
 ];
 
 export default function NavBar() {
@@ -35,7 +35,7 @@ export default function NavBar() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo / wordmark */}
+          {/* Logo */}
           <Link
             href="/"
             className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] rounded-md"
@@ -76,28 +76,19 @@ export default function NavBar() {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-3">
-            <Link
-              href="/kontakt"
-              className={cn(
-                "text-sm font-semibold px-4 py-2 rounded-md border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] focus-visible:ring-offset-2",
-                pathname === "/kontakt"
-                  ? "bg-[#065f46] text-white border-[#065f46]"
-                  : "bg-[#047857] text-white border-[#047857] hover:bg-[#065f46]"
-              )}
-              aria-current={pathname === "/kontakt" ? "page" : undefined}
-            >
-              Kontakt
-            </Link>
-            <a
-              href={`tel:${SITE.phonePlain}`}
-              className="flex items-center gap-2 text-sm font-semibold text-[#374151] hover:text-[#047857] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] rounded-md px-2 py-1"
-              aria-label={`Zavolejte nám: ${SITE.phone}`}
-            >
-              <Phone size={15} aria-hidden="true" />
-              {SITE.phone}
-            </a>
-          </div>
+          {/* Kontakt CTA */}
+          <Link
+            href="/kontakt"
+            className={cn(
+              "hidden md:inline-flex text-sm font-semibold px-4 py-2 rounded-md border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] focus-visible:ring-offset-2",
+              pathname === "/kontakt"
+                ? "bg-[#065f46] text-white border-[#065f46]"
+                : "bg-[#047857] text-white border-[#047857] hover:bg-[#065f46]"
+            )}
+            aria-current={pathname === "/kontakt" ? "page" : undefined}
+          >
+            Kontakt
+          </Link>
 
           {/* Mobile hamburger */}
           <button
@@ -114,10 +105,7 @@ export default function NavBar() {
 
       {/* Mobile menu */}
       {open && (
-        <div
-          id="mobile-menu"
-          className="md:hidden border-t border-[#e5e7eb] bg-white"
-        >
+        <div id="mobile-menu" className="md:hidden border-t border-[#e5e7eb] bg-white">
           <nav
             className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1"
             aria-label="Mobilní navigace"
@@ -151,22 +139,10 @@ export default function NavBar() {
             <Link
               href="/kontakt"
               onClick={() => setOpen(false)}
-              className={cn(
-                "text-[17px] font-medium py-3 px-2 rounded hover:bg-[#f9fafb] transition-colors",
-                pathname === "/kontakt"
-                  ? "text-[#047857]"
-                  : "text-[#111827] hover:text-[#047857]"
-              )}
+              className="mt-3 flex items-center justify-center bg-[#047857] text-white text-[17px] font-semibold py-3 rounded-md hover:bg-[#065f46] transition-colors"
             >
               Kontakt
             </Link>
-            <a
-              href={`tel:${SITE.phonePlain}`}
-              className="mt-3 flex items-center justify-center gap-2 bg-[#047857] text-white text-[17px] font-semibold py-3 rounded-md"
-            >
-              <Phone size={17} aria-hidden="true" />
-              {SITE.phone}
-            </a>
           </nav>
         </div>
       )}

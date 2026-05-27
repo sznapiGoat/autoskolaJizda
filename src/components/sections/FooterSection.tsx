@@ -5,6 +5,8 @@ import { SITE } from "@/lib/data";
 const LINKS = [
   { label: "Výcvik skupiny B", href: "/vycvik-b" },
   { label: "Exclusive", href: "/exclusive" },
+  { label: "Ceník", href: "/cenik" },
+  { label: "O nás", href: "/o-nas" },
   { label: "Pro studenty", href: "/studenti" },
   { label: "Kontakt", href: "/kontakt" },
 ];

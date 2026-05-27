@@ -181,18 +181,6 @@ export default function HeroSection() {
                 <p className="mt-1 text-xs font-bold text-[#047857]">Průměr 5,0 ★</p>
               </motion.div>
 
-              {/* Floating phone badge */}
-              <motion.a
-                href={`tel:${SITE.phonePlain}`}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.95, duration: 0.4, ease: "backOut" }}
-                className="hidden sm:flex absolute -right-4 top-8 bg-[#047857] text-white rounded-xl shadow-xl px-4 py-3 items-center gap-2 hover:bg-[#065f46] transition-colors"
-                aria-label={`Zavolat: ${SITE.phone}`}
-              >
-                <Phone size={15} aria-hidden="true" />
-                <span className="text-sm font-semibold">{SITE.phone}</span>
-              </motion.a>
             </motion.div>
           </div>
         </div>

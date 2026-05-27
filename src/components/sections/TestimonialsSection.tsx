@@ -1,7 +1,6 @@
 "use client";
 
 import { Star } from "lucide-react";
-import { motion } from "framer-motion";
 import { TESTIMONIALS, SITE } from "@/lib/data";
 import { FadeIn } from "@/components/ui/FadeIn";
 
@@ -53,7 +52,6 @@ export default function TestimonialsSection() {
       aria-labelledby="testimonials-heading"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <FadeIn direction="up" className="max-w-2xl mb-12">
           <p className="text-sm font-semibold text-[#047857] uppercase tracking-widest mb-3">
             Google recenze
@@ -65,12 +63,11 @@ export default function TestimonialsSection() {
             {SITE.reviewCount} recenzí. Průměr {SITE.googleRating.toFixed(1)}&thinsp;★.
           </h2>
           <p className="mt-4 text-[1.0625rem] text-[#6b7280] leading-relaxed">
-            Každé hodnocení si lze ověřit přímo na Google. Nechlubíme se čísly — necháváme mluvit
-            naše absolventy.
+            Každé hodnocení si lze ověřit přímo na Google. Nechlubíme se čísly — necháváme
+            mluvit naše absolventy.
           </p>
         </FadeIn>
 
-        {/* Aggregate badge */}
         <FadeIn direction="up" delay={0.1} className="mb-12">
           <div
             className="inline-flex items-center gap-5 bg-[#f0fdf4] border border-[#bbf7d0] rounded-xl px-6 py-4"
@@ -96,40 +93,30 @@ export default function TestimonialsSection() {
         </FadeIn>
       </div>
 
-      {/* Marquee — edge-to-edge */}
+      {/* Marquee — CSS-only, no JS animation library */}
       <div className="relative" aria-label="Přehled recenzí">
-        {/* Left fade */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-white to-transparent"
         />
-        {/* Right fade */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-white to-transparent"
         />
 
         {/* Row 1 — left */}
-        <motion.div
-          className="flex py-2"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 38, repeat: Infinity, ease: "linear" }}
-        >
+        <div className="flex py-2 animate-marquee-fwd">
           {DOUBLED.map((review, i) => (
             <ReviewCard key={`r1-${i}`} review={review} />
           ))}
-        </motion.div>
+        </div>
 
         {/* Row 2 — right */}
-        <motion.div
-          className="flex py-2 mt-4"
-          animate={{ x: ["-50%", "0%"] }}
-          transition={{ duration: 44, repeat: Infinity, ease: "linear" }}
-        >
+        <div className="flex py-2 mt-4 animate-marquee-rev">
           {DOUBLED.map((review, i) => (
             <ReviewCard key={`r2-${i}`} review={review} />
           ))}
-        </motion.div>
+        </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

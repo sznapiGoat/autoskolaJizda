@@ -15,6 +15,8 @@ const PAGES = [
   { name: 'home',      path: '/' },
   { name: 'vycvik-b',  path: '/vycvik-b' },
   { name: 'exclusive', path: '/exclusive' },
+  { name: 'cenik',     path: '/cenik' },
+  { name: 'o-nas',     path: '/o-nas' },
   { name: 'studenti',  path: '/studenti' },
   { name: 'kontakt',   path: '/kontakt' },
 ];
