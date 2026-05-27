@@ -33,7 +33,7 @@ export default function ExclusivePage() {
     <main id="main-content">
       {/* Page hero */}
       <section
-        className="relative bg-white pt-36 pb-20 sm:pb-28 overflow-hidden"
+        className="relative bg-white pt-24 pb-20 sm:pb-28 overflow-hidden"
         aria-labelledby="exclusive-heading"
       >
         {/* Teal radial glow */}

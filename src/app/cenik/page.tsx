@@ -27,7 +27,7 @@ function formatPrice(price: number) {
 export default function CenikPage() {
   return (
     <main id="main-content" className="bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-24">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-24">
 
         {/* Page title */}
         <FadeIn direction="up" className="mb-12">

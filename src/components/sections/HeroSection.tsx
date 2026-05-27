@@ -20,7 +20,7 @@ const words2 = ["s jistotou", "—", "v Rakovníku."];
 export default function HeroSection() {
   return (
     <section
-      className="relative bg-white pt-36 pb-0 overflow-hidden"
+      className="relative bg-white pt-24 pb-0 overflow-hidden"
       aria-labelledby="hero-heading"
     >
       {/* Grid background */}
@@ -163,23 +163,7 @@ export default function HeroSection() {
                 />
               </div>
 
-              {/* Floating rating badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, y: 10 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ delay: 0.75, duration: 0.45, ease: "backOut" }}
-                className="absolute -left-5 bottom-14 bg-white rounded-xl shadow-xl border border-[#e5e7eb] p-4 w-44"
-                aria-hidden="true"
-              >
-                <p className="text-[2rem] font-bold text-[#111827] leading-none">101</p>
-                <p className="text-xs text-[#6b7280] mt-0.5">Google recenzí</p>
-                <div className="mt-2 flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={14} className="fill-[#047857] text-[#047857]" />
-                  ))}
-                </div>
-                <p className="mt-1 text-xs font-bold text-[#047857]">Průměr 5,0 ★</p>
-              </motion.div>
+
 
             </motion.div>
           </div>

@@ -69,7 +69,7 @@ export default function KurzyPage() {
   return (
     <main id="main-content">
       {/* Header */}
-      <section className="bg-white pt-36 pb-16" aria-labelledby="kurzy-heading">
+      <section className="bg-white pt-24 pb-16" aria-labelledby="kurzy-heading">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <h1

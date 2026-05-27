@@ -14,7 +14,7 @@ export default function StudentiPage() {
   return (
     <main id="main-content">
       {/* Page hero */}
-      <section className="bg-white pt-36 pb-20 sm:pb-24" aria-labelledby="studenti-heading">
+      <section className="bg-white pt-24 pb-20 sm:pb-24" aria-labelledby="studenti-heading">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up" className="max-w-3xl">
             <p className="text-sm font-semibold text-[#047857] uppercase tracking-widest mb-3">

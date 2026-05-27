@@ -34,7 +34,7 @@ export default function ONasPage() {
     <main id="main-content">
       {/* Hero */}
       <section
-        className="relative bg-white pt-36 pb-20 sm:pb-28 overflow-hidden"
+        className="relative bg-white pt-24 pb-20 sm:pb-28 overflow-hidden"
         aria-labelledby="o-nas-heading"
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

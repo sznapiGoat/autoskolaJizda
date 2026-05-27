@@ -23,7 +23,7 @@ export default function KontaktPage() {
   return (
     <main id="main-content">
       {/* Page hero */}
-      <section className="bg-white pt-36 pb-12" aria-labelledby="kontakt-heading">
+      <section className="bg-white pt-24 pb-12" aria-labelledby="kontakt-heading">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up" className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-[#f0fdf4] border border-[#bbf7d0] text-[#065f46] text-sm font-semibold px-3 py-1.5 rounded-full mb-6">
