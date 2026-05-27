@@ -35,18 +35,28 @@ export default function NavBar() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo / wordmark */}
-          <Link
-            href="/"
-            className="flex flex-col leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] rounded"
+          {/* Logo / wordmark — scrolls to top */}
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] rounded-md"
+            aria-label="Zpět na začátek stránky"
           >
-            <span className="text-[15px] font-bold tracking-tight text-[#111827]">
-              Autoškola Jízda
+            {/* L-plate badge */}
+            <span
+              className="w-8 h-8 flex items-center justify-center rounded bg-[#047857] text-white text-sm font-black leading-none select-none shrink-0 group-hover:bg-[#065f46] transition-colors"
+              aria-hidden="true"
+            >
+              L
             </span>
-            <span className="text-[11px] text-[#6b7280] font-normal tracking-wide">
-              Rakovník
+            <span className="flex flex-col leading-none text-left">
+              <span className="text-[15px] font-bold tracking-tight text-[#111827] group-hover:text-[#047857] transition-colors">
+                Autoškola Jízda
+              </span>
+              <span className="text-[11px] text-[#6b7280] font-normal tracking-wide">
+                Rakovník
+              </span>
             </span>
-          </Link>
+          </button>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-6" aria-label="Hlavní navigace">
@@ -94,15 +104,21 @@ export default function NavBar() {
             className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1"
             aria-label="Mobilní navigace"
           >
+            <button
+              onClick={() => { window.scrollTo({ top: 0, behavior: "smooth" }); setOpen(false); }}
+              className="text-[17px] font-semibold text-[#047857] py-3 px-2 text-left"
+            >
+              ↑ Zpět na začátek
+            </button>
             {NAV_LINKS.map((link) => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="text-[17px] font-medium text-[#111827] py-3 px-2 rounded hover:bg-[#f9fafb] hover:text-[#047857] transition-colors"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
             <a
               href={`tel:${SITE.phonePlain}`}

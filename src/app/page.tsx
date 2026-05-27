@@ -1,6 +1,7 @@
 import NavBar from "@/components/sections/NavBar";
 import HeroSection from "@/components/sections/HeroSection";
 import StatsBar from "@/components/sections/StatsBar";
+import RemotionSection from "@/components/sections/RemotionSection";
 import AdvantagesSection from "@/components/sections/AdvantagesSection";
 import PricingSection from "@/components/sections/PricingSection";
 import FeesSection from "@/components/sections/FeesSection";
@@ -16,6 +17,7 @@ export default function HomePage() {
       <main id="main-content">
         <HeroSection />
         <StatsBar />
+        <RemotionSection />
         <AdvantagesSection />
         <PricingSection />
         <FeesSection />
