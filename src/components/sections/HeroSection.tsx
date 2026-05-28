@@ -6,11 +6,11 @@ import { Star, MapPin, Phone, ArrowRight } from "lucide-react";
 import { SITE } from "@/lib/data";
 
 const WORD_VARIANTS = {
-  hidden: { opacity: 0, y: 18 },
+  hidden: { opacity: 0, y: 20 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.08, duration: 0.5, ease: "easeOut" as const },
+    transition: { delay: i * 0.09, duration: 0.55, ease: "easeOut" as const },
   }),
 };
 
@@ -23,15 +23,13 @@ export default function HeroSection() {
       className="relative bg-white pt-24 pb-0 overflow-hidden"
       aria-labelledby="hero-heading"
     >
-      {/* Grid background */}
+      {/* Diagonal teal panel — desktop only, right side */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none hidden lg:block"
         style={{
-          backgroundImage:
-            "linear-gradient(#e5e7eb 1px, transparent 1px), linear-gradient(90deg, #e5e7eb 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-          opacity: 0.3,
+          background: "#f0fdf4",
+          clipPath: "polygon(56% 0%, 100% 0%, 100% 100%, 44% 100%)",
         }}
       />
 
@@ -39,7 +37,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-end">
 
           {/* LEFT — text */}
-          <div className="pt-8 pb-16 lg:pb-20">
+          <div className="pt-8 pb-16 lg:pb-24">
 
             {/* Rating pill */}
             <motion.div
@@ -56,12 +54,12 @@ export default function HeroSection() {
               101× hodnocení 5,0 na Google
             </motion.div>
 
-            {/* Animated headline */}
+            {/* Animated headline — bolder */}
             <h1
               id="hero-heading"
-              className="text-[2.75rem] sm:text-[3.5rem] lg:text-[4rem] font-bold text-[#111827] tracking-tight leading-[1.1] mb-6"
+              className="text-[3rem] sm:text-[4.25rem] lg:text-[5rem] font-bold text-[#111827] tracking-[-0.03em] leading-[0.95] mb-7"
             >
-              <span className="block overflow-hidden">
+              <span className="block">
                 {words1.map((word, i) => (
                   <motion.span
                     key={word}
@@ -69,13 +67,13 @@ export default function HeroSection() {
                     variants={WORD_VARIANTS}
                     initial="hidden"
                     animate="visible"
-                    className="inline-block mr-[0.25em]"
+                    className="inline-block mr-[0.2em]"
                   >
                     {word}
                   </motion.span>
                 ))}
               </span>
-              <span className="block overflow-hidden">
+              <span className="block">
                 {words2.map((word, i) => (
                   <motion.span
                     key={word}
@@ -83,7 +81,7 @@ export default function HeroSection() {
                     variants={WORD_VARIANTS}
                     initial="hidden"
                     animate="visible"
-                    className={`inline-block mr-[0.2em] ${word === "s jistotou" ? "text-[#047857]" : ""}`}
+                    className={`inline-block mr-[0.15em] ${word === "s jistotou" ? "text-[#047857]" : ""}`}
                   >
                     {word}
                   </motion.span>
@@ -96,7 +94,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55, duration: 0.5 }}
-              className="text-[1.125rem] sm:text-[1.1875rem] text-[#4b5563] leading-relaxed mb-8 max-w-lg"
+              className="text-[1.0625rem] text-[#4b5563] leading-relaxed mb-8 max-w-md"
             >
               Individuální přístup, moderní klimatizovaná vozidla a výuka i v cizích jazycích.
               Více než sto absolventů — každý s pětihvězdičkovým hodnocením.
@@ -143,9 +141,8 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: 40, scale: 0.96 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ delay: 0.25, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative w-full max-w-[560px]"
+              className="relative w-full max-w-[580px]"
             >
-              {/* Image */}
               <div className="relative rounded-t-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/jizda1.jpg"
@@ -154,19 +151,16 @@ export default function HeroSection() {
                   height={600}
                   className="w-full h-auto object-cover"
                   priority
-                  sizes="(max-width: 1024px) 100vw, 560px"
+                  sizes="(max-width: 1024px) 100vw, 580px"
                 />
-                {/* Dark overlay gradient at bottom */}
                 <div
                   aria-hidden="true"
                   className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/30 to-transparent"
                 />
               </div>
-
-
-
             </motion.div>
           </div>
+
         </div>
       </div>
     </section>
