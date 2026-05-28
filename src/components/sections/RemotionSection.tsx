@@ -26,7 +26,7 @@ export default function RemotionSection() {
             101 recenzí. 5 jazyků. 1 autoškola.
           </h2>
           <p className="mt-4 text-[1.0625rem] text-[#6b7280] leading-relaxed">
-            Stiskněte play — třicet sekund, které shrnou, proč si nás vybírají
+            Stiskněte play. Třicet sekund, které shrnou, proč si nás vybírají
             absolventi z celého světa.
           </p>
         </FadeIn>

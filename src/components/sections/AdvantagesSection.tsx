@@ -39,7 +39,7 @@ export default function AdvantagesSection() {
           </h2>
           <p className="mt-4 text-[1.0625rem] text-[#6b7280] leading-relaxed">
             Výcvik přizpůsobujeme každému žadateli. Nenajdete u nás fronty ani
-            anonymní systém — jen kvalitní výuka a lidský přístup.
+            anonymní systém. Jen kvalitní výuka a lidský přístup.
           </p>
         </FadeIn>
 

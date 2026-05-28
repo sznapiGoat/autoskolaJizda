@@ -22,7 +22,7 @@ function formatPrice(price: number) {
 const premiumTiers = PRICING_TIERS.filter((t) => t.id === "exclusive" || t.id === "vip");
 
 const PROCESS = [
-  { step: "01", text: "Kontaktujte nás — sdělte preferovaný jazyk a termín" },
+  { step: "01", text: "Kontaktujte nás a sdělte preferovaný jazyk a termín" },
   { step: "02", text: "Zajistíme tlumočníka pro výuku i zkoušky" },
   { step: "03", text: "Přizpůsobíme rozvrh prioritním termínům" },
   { step: "04", text: "Doprovázíme vás i na magistrát při zkouškách" },
@@ -149,7 +149,7 @@ export default function ExclusivePage() {
                     </div>
                   )}
                   <p className="text-xs font-semibold text-[#6b7280] uppercase tracking-widest mb-1">
-                    Skupina B — cizí jazyk
+                    Skupina B, cizí jazyk
                   </p>
                   <h3 className="text-2xl font-bold text-[#111827] mb-3">{tier.name}</h3>
                   <p className="text-[2.25rem] font-bold text-[#111827] leading-none mb-2">

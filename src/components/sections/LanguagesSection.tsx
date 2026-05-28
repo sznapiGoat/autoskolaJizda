@@ -37,13 +37,13 @@ export default function LanguagesSection() {
                 id="languages-heading"
                 className="text-3xl sm:text-4xl font-bold text-[#111827] mb-5"
               >
-                Výuka v cizím jazyce —{" "}
+                Výuka v cizím jazyce:{" "}
                 <span className="text-[#047857]">kurz Exclusive</span>
               </h2>
 
               <p className="text-[1.0625rem] text-[#4b5563] leading-relaxed mb-6">
                 Specializujeme se na řidiče-cizince. Zajišťujeme překladatele přímo
-                pro vaše jízdy i teoretickou výuku — vše zvládnete i bez češtiny.
+                pro vaše jízdy i teoretickou výuku. Vše zvládnete i bez češtiny.
               </p>
 
               <ul className="space-y-2 mb-8" aria-label="Dostupné jazyky výuky">
@@ -62,7 +62,7 @@ export default function LanguagesSection() {
 
               <p className="text-sm text-[#6b7280] mb-8">
                 Spolupracujeme s ověřenými překladateli. Stačí nám jazyk sdělit
-                při zápisu — vše ostatní zařídíme.
+                při zápisu, vše ostatní zařídíme.
               </p>
 
               <a

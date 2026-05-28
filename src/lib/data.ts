@@ -3,7 +3,7 @@
 export const SITE = {
   name: "Autoškola Jízda s.r.o.",
   shortName: "Autoškola Jízda",
-  tagline: "Řidičský průkaz v Rakovníku — s lidským přístupem.",
+  tagline: "Řidičský průkaz v Rakovníku. S lidským přístupem.",
   phone: "+420 728 492 692",
   phonePlain: "728492692",
   email: "autoskola.jizda@seznam.cz",
@@ -29,7 +29,7 @@ export const ADVANTAGES = [
     id: "individual",
     icon: "UserCheck",
     title: "Individuální přístup",
-    body: "Nejsme franšíza. Každý žák dostává osobní péči — výcvik přizpůsobujeme tempu a potřebám jednotlivce.",
+    body: "Nejsme franšíza. Každý žák dostává osobní péči, výcvik přizpůsobujeme tempu a potřebám jednotlivce.",
   },
   {
     id: "languages",
@@ -53,7 +53,7 @@ export const ADVANTAGES = [
     id: "psycholog",
     icon: "Brain",
     title: "Dopravní psycholog",
-    body: "Externě zajišťujeme dopravně-psychologické vyšetření — vše vyřídíme za vás na jednom místě.",
+    body: "Externě zajišťujeme dopravně-psychologické vyšetření. Vše vyřídíme za vás na jednom místě.",
   },
 ];
 
@@ -76,7 +76,7 @@ export const PRICING_TIERS = [
     id: "standard",
     name: "Standard",
     price: 21000,
-    description: "Rozšířená péče s větším počtem jízdních hodin — ideální pro většinu žadatelů.",
+    description: "Rozšířená péče s větším počtem jízdních hodin, ideální pro většinu žadatelů.",
     features: [
       "Vše z Basic kurzu",
       "Více jízdních hodin",
@@ -105,7 +105,7 @@ export const PRICING_TIERS = [
     id: "vip",
     name: "VIP",
     price: 50000,
-    description: "Maximální komfort — vše zařídíme, vy se soustředíte jen na řízení.",
+    description: "Maximální komfort. Vše zařídíme, vy se soustředíte jen na řízení.",
     features: [
       "Vše z Exclusive kurzu",
       "Flexibilní rozvrh 24/7",
@@ -257,7 +257,7 @@ export const WHY_US = [
     id: "psycholog",
     icon: "Brain",
     title: "Dopravní psycholog",
-    body: "Externě spolupracujeme s dopravním psychologem — zajistíme dopravně-psychologické vyšetření přímo za vás.",
+    body: "Externě spolupracujeme s dopravním psychologem. Zajistíme dopravně-psychologické vyšetření přímo za vás.",
   },
   {
     id: "success",
@@ -269,7 +269,7 @@ export const WHY_US = [
     id: "theory",
     icon: "BookOpenCheck",
     title: "Pravidelná teoretická výuka",
-    body: "Teorie probíhá formou přednášek na učebně. Praktický výcvik od rána do večera — dle vašich možností.",
+    body: "Teorie probíhá formou přednášek na učebně. Praktický výcvik probíhá od rána do večera dle vašich možností.",
   },
 ];
 
@@ -302,7 +302,7 @@ export const RESOURCES_EXTERNAL = [
   },
   {
     id: "besip",
-    label: "BESIP — bezpečnost silničního provozu",
+    label: "BESIP: bezpečnost silničního provozu",
     description: "Officiální portál Ministerstva dopravy o bezpečnosti",
     href: "https://besip.cz/",
   },
@@ -354,7 +354,7 @@ export const FAQ_ITEMS = [
     id: "q4",
     question: "Mohu absolvovat výcvik v jiném jazyce než češtině?",
     answer:
-      "Ano — v kurzu Exclusive a VIP zajišťujeme tlumočení do arabštiny, vietnamštiny, ruštiny, angličtiny a čínštiny. Stačí nám to předem sdělit.",
+      "Ano, v kurzu Exclusive a VIP zajišťujeme tlumočení do arabštiny, vietnamštiny, ruštiny, angličtiny a čínštiny. Stačí nám to předem sdělit.",
   },
   {
     id: "q5",
@@ -372,7 +372,7 @@ export const FAQ_ITEMS = [
     id: "q7",
     question: "Kdy probíhá teoretická výuka?",
     answer:
-      "Teoretická výuka probíhá pravidelně na učebně autoškoly ve formě přednášek. Přesný rozvrh vám sdělíme při zápisu — termíny se přizpůsobují aktuální skupině.",
+      "Teoretická výuka probíhá pravidelně na učebně autoškoly ve formě přednášek. Přesný rozvrh vám sdělíme při zápisu, termíny se přizpůsobují aktuální skupině.",
   },
   {
     id: "q8",

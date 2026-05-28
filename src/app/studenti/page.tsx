@@ -145,10 +145,10 @@ export default function StudentiPage() {
             </p>
             <ul className="flex flex-col gap-2 mb-6">
               {[
-                "Teorie — minimálně 25 hodin výuky",
-                "Praktický výcvik — minimálně 30 jízdních hodin",
-                "Výuka zdravotnické přípravy — 2 hodiny",
-                "Výuka předpisů o provozu vozidel — obsažena v teoretické části",
+                "Teorie: minimálně 25 hodin výuky",
+                "Praktický výcvik: minimálně 30 jízdních hodin",
+                "Výuka zdravotnické přípravy: 2 hodiny",
+                "Výuka předpisů o provozu vozidel: obsažena v teoretické části",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-[#374151] text-sm">
                   <BookOpen size={14} className="text-[#047857] mt-0.5 shrink-0" aria-hidden="true" />
@@ -204,7 +204,7 @@ export default function StudentiPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn direction="up">
             <h2 className="text-2xl font-bold text-white mb-3">Máte další otázky?</h2>
-            <p className="text-[#bbf7d0] mb-7">Zavolejte nám — odpovídáme rychle.</p>
+            <p className="text-[#bbf7d0] mb-7">Zavolejte nám, odpovídáme rychle.</p>
             <Link
               href="/kontakt"
               className="inline-flex items-center gap-2 bg-white text-[#047857] text-[1rem] font-bold px-8 py-3.5 rounded-md hover:bg-[#f0fdf4] transition-colors"

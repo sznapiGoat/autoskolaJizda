@@ -25,7 +25,7 @@ export default function ContactSection() {
             Pojďme to rozjet.
           </h2>
           <p className="mt-4 text-[1.0625rem] text-[#6b7280] leading-relaxed">
-            Zavolejte nebo napište — odpovídáme rychle. Sídlíme v Rakovníku
+            Zavolejte nebo napište, odpovídáme rychle. Sídlíme v Rakovníku
             na Husově náměstí, 3.&nbsp;patro.
           </p>
         </FadeIn>

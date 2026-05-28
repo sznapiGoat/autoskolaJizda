@@ -103,7 +103,7 @@ export default function CenikPage() {
             </tbody>
           </table>
           <p className="mt-3 text-xs text-[#6b7280]">
-            Arabština, vietnamština, ruština, angličtina, čínština — tlumočník zajištěn v ceně.{" "}
+            Arabština, vietnamština, ruština, angličtina a čínština. Tlumočník zajištěn v ceně.{" "}
             <Link href="/exclusive" className="text-[#047857] hover:underline">Více informací →</Link>
           </p>
         </FadeIn>
@@ -153,7 +153,7 @@ export default function CenikPage() {
             Správní poplatky (magistrát)
           </h2>
           <p className="text-xs text-[#6b7280] mb-4">
-            Níže uvedené poplatky se hradí přímo na příslušném magistrátu — nejsou součástí ceny kurzu.
+            Níže uvedené poplatky se hradí přímo na příslušném magistrátu. Nejsou součástí ceny kurzu.
           </p>
           <table className="w-full text-sm" aria-label="Přehled správních poplatků">
             <tbody className="divide-y divide-[#f3f4f6]">
@@ -186,7 +186,7 @@ export default function CenikPage() {
                     <AlertCircle size={15} className="text-[#dc2626] mt-0.5 shrink-0" aria-hidden="true" />
                   )}
                   <div>
-                    <span className="text-[#374151]">{rule.condition} — </span>
+                    <span className="text-[#374151]">{rule.condition}: </span>
                     <span className={`font-semibold ${ok ? "text-[#047857]" : "text-[#dc2626]"}`}>
                       {rule.consequence}
                     </span>

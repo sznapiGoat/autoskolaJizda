@@ -21,7 +21,7 @@ export default function ResourcesSection() {
             Materiály &amp; užitečné odkazy
           </h2>
           <p className="mt-4 text-[1.0625rem] text-[#6b7280] leading-relaxed">
-            Vše, co potřebujete před zahájením kurzu i v jeho průběhu — formuláře ke
+            Vše, co potřebujete před zahájením kurzu i v jeho průběhu: formuláře ke
             stažení a ověřené externí zdroje na jednom místě.
           </p>
         </FadeIn>

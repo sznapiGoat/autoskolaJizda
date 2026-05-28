@@ -15,7 +15,7 @@ const WORD_VARIANTS = {
 };
 
 const words1 = ["Řidičský", "průkaz"];
-const words2 = ["s jistotou", "—", "v Rakovníku."];
+const words2 = ["s jistotou", "v Rakovníku."];
 
 export default function HeroSection() {
   return (
@@ -97,7 +97,7 @@ export default function HeroSection() {
               className="text-[1.0625rem] text-[#4b5563] leading-relaxed mb-8 max-w-md"
             >
               Individuální přístup, moderní klimatizovaná vozidla a výuka i v cizích jazycích.
-              Více než sto absolventů — každý s pětihvězdičkovým hodnocením.
+              Více než sto absolventů, každý s pětihvězdičkovým hodnocením.
             </motion.p>
 
             {/* CTAs */}

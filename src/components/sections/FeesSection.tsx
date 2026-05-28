@@ -20,7 +20,7 @@ export default function FeesSection() {
             Správní poplatky &amp; podmínky
           </h2>
           <p className="mt-4 text-[1.0625rem] text-[#6b7280] leading-relaxed">
-            Správní poplatky jsou hrazeny přímo na příslušném magistrátu — nejsou součástí
+            Správní poplatky jsou hrazeny přímo na příslušném magistrátu. Nejsou součástí
             ceny kurzu. Přehled všech poplatků pro skupinu B.
           </p>
         </FadeIn>

@@ -20,12 +20,12 @@ const VALUES = [
   {
     Icon: Trophy,
     title: "Vysoká úspěšnost",
-    body: "Naši žáci dosahují u zkoušek výrazně nadprůměrných výsledků. Svědčí o tom i 101 pětihvězdičkových hodnocení na Google — každé ověřitelné.",
+    body: "Naši žáci dosahují u zkoušek výrazně nadprůměrných výsledků. Svědčí o tom 101 pětihvězdičkových hodnocení na Google, každé ověřitelné.",
   },
   {
     Icon: Globe,
     title: "Výuka v cizích jazycích",
-    body: "Jediná autoškola v Rakovníku specializovaná na řidiče-cizince. Arabština, vietnamština, ruština, angličtina a čínština — s certifikovaným tlumočníkem.",
+    body: "Jediná autoškola v Rakovníku specializovaná na řidiče-cizince. Arabština, vietnamština, ruština, angličtina a čínština. Tlumočník zajištěn v ceně.",
   },
 ];
 
@@ -59,11 +59,11 @@ export default function ONasPage() {
                 <span className="text-[#047857]">Autoškola Jízda</span>
               </h1>
               <p className="text-[1.125rem] text-[#4b5563] leading-relaxed mb-6">
-                Rodinná autoškola v srdci Rakovníku. Nejsme velká franšíza — každého žáka
+                Rodinná autoškola v srdci Rakovníku. Nejsme velká franšíza, každého žáka
                 vnímáme jako jednotlivce a výcvik přizpůsobujeme jeho potřebám a tempu.
               </p>
               <p className="text-[1.0625rem] text-[#4b5563] leading-relaxed mb-8">
-                Od svého vzniku jsme vychovali přes sto absolventů — každý z nich nám zanechal
+                Od svého vzniku jsme vychovali přes sto absolventů, každý z nich nám zanechal
                 pětihvězdičkové hodnocení. Sídlíme na Husově náměstí v Rakovníku (3. patro),
                 výcvikové jízdy probíhají flexibilně dle vašich možností.
               </p>
@@ -155,7 +155,7 @@ export default function ONasPage() {
               Vyučujeme v cizích jazycích
             </h2>
             <p className="text-[#6b7280] leading-relaxed">
-              Zajistíme certifikovaného tlumočníka pro celý průběh kurzu — od teorie přes
+              Zajistíme certifikovaného tlumočníka pro celý průběh kurzu: od teorie přes
               jízdy až po zkoušky na magistrátu. Stačí nám to říct předem.
             </p>
           </FadeIn>

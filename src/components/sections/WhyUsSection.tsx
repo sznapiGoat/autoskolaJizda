@@ -37,8 +37,8 @@ export default function WhyUsSection() {
             Kvalita, na které záleží
           </h2>
           <p className="mt-4 text-[1.0625rem] text-[#6b7280] leading-relaxed">
-            Od moderní flotily až po osobní přístup každého instruktora —
-            zde je šest důvodů, proč nás absolventi doporučují dál.
+            Od moderní flotily až po osobní přístup každého instruktora.
+            Šest důvodů, proč nás absolventi doporučují dál.
           </p>
         </FadeIn>
 

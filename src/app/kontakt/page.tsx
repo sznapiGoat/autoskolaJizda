@@ -37,7 +37,7 @@ export default function KontaktPage() {
               Pojďme to rozjet
             </h1>
             <p className="text-[1.125rem] text-[#4b5563] leading-relaxed">
-              Zavolejte nebo napište — odpovídáme rychle. Bez čekání a bez fronty.
+              Zavolejte nebo napište. Odpovídáme rychle, bez čekání a bez fronty.
             </p>
           </FadeIn>
         </div>
@@ -148,7 +148,7 @@ export default function KontaktPage() {
                     ))}
                   </ul>
                   <p className="mt-4 text-xs text-[#6b7280]">
-                    Jízdy probíhají od rána do večera — dle vašich možností.
+                    Jízdy probíhají od rána do večera dle vašich možností.
                   </p>
                 </div>
               </FadeIn>
@@ -161,7 +161,7 @@ export default function KontaktPage() {
                     <h2 className="text-base font-bold text-[#111827]">Dopravní psycholog</h2>
                   </div>
                   <p className="text-sm text-[#6b7280] leading-relaxed">
-                    Externě spolupracujeme s dopravním psychologem — dopravně-psychologické
+                    Externě spolupracujeme s dopravním psychologem. Dopravně-psychologické
                     vyšetření zajistíme přímo za vás. Ideální pro uchazeče o vrácení ŘP i
                     pro profesionální řidiče. Kontaktujte nás pro více informací.
                   </p>

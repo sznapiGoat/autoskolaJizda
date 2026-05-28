@@ -63,7 +63,7 @@ export default function TestimonialsSection() {
             {SITE.reviewCount} recenzí. Průměr {SITE.googleRating.toFixed(1)}&thinsp;★.
           </h2>
           <p className="mt-4 text-[1.0625rem] text-[#6b7280] leading-relaxed">
-            Každé hodnocení si lze ověřit přímo na Google. Nechlubíme se čísly — necháváme
+            Každé hodnocení si lze ověřit přímo na Google. Nechlubíme se čísly, necháváme
             mluvit naše absolventy.
           </p>
         </FadeIn>

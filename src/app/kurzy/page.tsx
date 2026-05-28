@@ -16,7 +16,7 @@ const INCLUDED = [
   "Zdravotnická příprava (2 hodiny)",
   "Učební materiály v ceně (cca 500 Kč)",
   "Moderní klimatizované výcvikové vozidlo",
-  "Příprava na zkoušku — teorie i jízda",
+  "Příprava na zkoušku: teorie i jízda",
 ];
 
 const STEPS = [
@@ -33,7 +33,7 @@ const STEPS = [
   {
     Icon: Car,
     title: "Praktický výcvik",
-    desc: "Jízdy s instruktorem dle vašich možností. Termíny se přizpůsobují — ráno, odpoledne i večer.",
+    desc: "Jízdy s instruktorem dle vašich možností. Termíny ráno, odpoledne i večer.",
   },
   {
     Icon: ClipboardCheck,
@@ -49,7 +49,7 @@ const OTHER_COURSES = [
     href: "/exclusive",
   },
   {
-    title: "L17 — doprovod mentorem",
+    title: "L17: doprovod mentorem",
     desc: "Teoretická příprava mentora a společná výcviková jízda se žákem. Cena dle dohody.",
     href: "/kontakt",
   },

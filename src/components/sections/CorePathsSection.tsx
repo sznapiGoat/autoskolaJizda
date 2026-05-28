@@ -17,7 +17,7 @@ const PATHS = [
     href: "/exclusive",
     Icon: Globe,
     label: "Výuka v cizím jazyce",
-    desc: "Specializujeme se na řidiče-cizince. Arabština, vietnamština, ruština, angličtina, čínština — tlumočník zajištěn v ceně.",
+    desc: "Specializujeme se na řidiče-cizince. Arabština, vietnamština, ruština, angličtina, čínština. Tlumočník zajištěn v ceně.",
     cta: "Exclusive & VIP",
     highlighted: true,
     badge: "Výlučná specialita",
@@ -26,7 +26,7 @@ const PATHS = [
     href: "/kontakt",
     Icon: PhoneCall,
     label: "Zapsat se dnes",
-    desc: "Volejte kdykoliv — bez čekání a bez fronty. Zapište se ihned a začněte jezdit dle vašeho vlastního tempa.",
+    desc: "Volejte kdykoliv, bez čekání a bez fronty. Zapište se ihned a začněte jezdit dle vašeho vlastního tempa.",
     cta: "Kontaktovat nás",
     highlighted: false,
     badge: null,
@@ -51,7 +51,7 @@ export default function CorePathsSection() {
             Vyberte si svou cestu
           </h2>
           <p className="mt-4 text-[1.0625rem] text-[#6b7280] leading-relaxed">
-            Ať jste místní, cizinec nebo hledáte dárkový kurz — máme řešení přesně pro vás.
+            Ať jste místní, cizinec nebo hledáte dárkový kurz. Máme řešení přesně pro vás.
           </p>
         </FadeIn>
 

@@ -201,7 +201,7 @@ export const RatingCard: React.FC<RatingCardProps> = ({
           zIndex: 1,
         }}
       >
-        Řidičský průkaz v Rakovníku — s lidským přístupem.
+        Řidičský průkaz v Rakovníku. S lidským přístupem.
       </p>
 
       {/* Outro white overlay */}

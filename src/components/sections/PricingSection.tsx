@@ -32,7 +32,7 @@ export default function PricingSection() {
           </h2>
           <p className="mt-4 text-[1.0625rem] text-[#6b7280] leading-relaxed">
             Veškeré učební materiály (v hodnotě cca 500 Kč) jsou součástí každého kurzu.
-            Správní poplatky jsou hrazeny přímo na magistrátu — viz tabulka níže.
+            Správní poplatky jsou hrazeny přímo na magistrátu, viz tabulka níže.
           </p>
         </FadeIn>
 
