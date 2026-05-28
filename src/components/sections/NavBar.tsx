@@ -39,6 +39,7 @@ export default function NavBar() {
           {/* Logo */}
           <Link
             href="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
             className="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] rounded-md"
             aria-label="Autoškola Jízda, domovská stránka"
           >

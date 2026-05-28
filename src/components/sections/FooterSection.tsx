@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
 import { SITE } from "@/lib/data";
@@ -25,17 +24,8 @@ export default function FooterSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2.5 mb-3">
-              <Image
-                src="/images/jizdalogo.svg"
-                alt="Autoškola Jízda"
-                width={40}
-                height={40}
-                className="shrink-0 brightness-0 invert"
-              />
-              <p className="text-lg font-bold tracking-tight">{SITE.name}</p>
-            </div>
-            <p className="text-sm text-gray-400">{SITE.address}, {SITE.city}</p>
+            <p className="text-xl font-bold tracking-tight text-white">Autoškola Jízda</p>
+            <p className="text-sm text-gray-400 mt-1">{SITE.address}, {SITE.city}</p>
             <div className="mt-5 flex flex-col gap-2.5">
               <a
                 href={`tel:${SITE.phonePlain}`}
