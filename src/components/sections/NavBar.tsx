@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -38,15 +39,18 @@ export default function NavBar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] rounded-md"
-            aria-label="Autoškola Jízda — domovská stránka"
+            className="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] rounded-md"
+            aria-label="Autoškola Jízda, domovská stránka"
           >
-            <span
-              className="w-8 h-8 flex items-center justify-center rounded bg-[#047857] text-white text-sm font-black leading-none select-none shrink-0 group-hover:bg-[#065f46] transition-colors"
+            <Image
+              src="/images/jizdalogo.svg"
+              alt=""
+              width={36}
+              height={36}
+              className="shrink-0"
+              priority
               aria-hidden="true"
-            >
-              L
-            </span>
+            />
             <span className="flex flex-col leading-none text-left">
               <span className="text-[15px] font-bold tracking-tight text-[#111827] group-hover:text-[#047857] transition-colors">
                 Autoškola Jízda
