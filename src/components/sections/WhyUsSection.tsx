@@ -32,7 +32,7 @@ export default function WhyUsSection() {
           </p>
           <h2
             id="whyus-heading"
-            className="text-3xl sm:text-4xl font-bold text-[#111827]"
+            className="text-3xl sm:text-5xl font-bold text-[#111827] tracking-tight"
           >
             Kvalita, na které záleží
           </h2>

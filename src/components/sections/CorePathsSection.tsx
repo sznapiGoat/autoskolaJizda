@@ -46,7 +46,7 @@ export default function CorePathsSection() {
           </p>
           <h2
             id="paths-heading"
-            className="text-3xl sm:text-4xl font-bold text-[#111827]"
+            className="text-3xl sm:text-5xl font-bold text-[#111827] tracking-tight"
           >
             Vyberte si svou cestu
           </h2>

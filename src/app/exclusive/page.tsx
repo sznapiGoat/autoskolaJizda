@@ -131,55 +131,84 @@ export default function ExclusivePage() {
           </FadeIn>
 
           <StaggerContainer staggerDelay={0.12} className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
-            {premiumTiers.map((tier) => (
-              <StaggerItem key={tier.id}>
-                <article
-                  className={cn(
-                    "relative flex flex-col rounded-xl border bg-white p-8 h-full",
-                    tier.id === "exclusive"
-                      ? "border-[#047857] shadow-md ring-1 ring-[#047857]"
-                      : "border-[#e5e7eb] shadow-sm"
-                  )}
-                >
-                  {tier.badge && (
-                    <div className="absolute -top-3 left-6">
-                      <span className="text-[11px] font-semibold bg-[#047857] text-white px-2.5 py-0.5 rounded-full">
-                        {tier.badge}
-                      </span>
-                    </div>
-                  )}
-                  <p className="text-xs font-semibold text-[#6b7280] uppercase tracking-widest mb-1">
-                    Skupina B, cizí jazyk
-                  </p>
-                  <h3 className="text-2xl font-bold text-[#111827] mb-3">{tier.name}</h3>
-                  <p className="text-[2.25rem] font-bold text-[#111827] leading-none mb-2">
-                    {formatPrice(tier.price)}
-                  </p>
-                  <p className="text-sm text-[#6b7280] mb-6 leading-relaxed">{tier.description}</p>
-
-                  <ul className="flex flex-col gap-2.5 mb-8" aria-label="Součásti kurzu">
-                    {tier.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5 text-sm text-[#374151]">
-                        <Check size={15} className="text-[#047857] mt-0.5 shrink-0" aria-hidden="true" />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Link
-                    href="/kontakt"
+            {premiumTiers.map((tier) => {
+              const dark = tier.id === "vip";
+              return (
+                <StaggerItem key={tier.id}>
+                  <article
                     className={cn(
-                      "mt-auto block text-center text-sm font-semibold py-3 px-4 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] focus-visible:ring-offset-2",
-                      tier.id === "exclusive"
-                        ? "bg-[#047857] text-white hover:bg-[#065f46]"
-                        : "border border-[#e5e7eb] text-[#111827] hover:bg-[#f9fafb]"
+                      "relative flex flex-col rounded-2xl border p-8 h-full",
+                      dark
+                        ? "border-[#111827] bg-[#111827] text-white shadow-xl"
+                        : "border-[#047857] bg-white shadow-md ring-1 ring-[#047857]"
                     )}
                   >
-                    Mám zájem
-                  </Link>
-                </article>
-              </StaggerItem>
-            ))}
+                    {tier.badge && (
+                      <div className="absolute -top-3 left-6">
+                        <span
+                          className={cn(
+                            "text-[11px] font-semibold px-2.5 py-0.5 rounded-full",
+                            dark ? "bg-gold text-[#111827]" : "bg-[#047857] text-white"
+                          )}
+                        >
+                          {tier.badge}
+                        </span>
+                      </div>
+                    )}
+                    <p
+                      className={cn(
+                        "text-xs font-semibold uppercase tracking-widest mb-1",
+                        dark ? "text-gold" : "text-[#6b7280]"
+                      )}
+                    >
+                      Skupina B, cizí jazyk
+                    </p>
+                    <h3 className={cn("text-2xl font-bold mb-3", dark ? "text-white" : "text-[#111827]")}>
+                      {tier.name}
+                    </h3>
+                    <p
+                      className={cn(
+                        "text-[2.25rem] font-extrabold leading-none mb-2",
+                        dark ? "text-white" : "text-[#111827]"
+                      )}
+                    >
+                      {formatPrice(tier.price)}
+                    </p>
+                    <p className={cn("text-sm mb-6 leading-relaxed", dark ? "text-gray-300" : "text-[#6b7280]")}>
+                      {tier.description}
+                    </p>
+
+                    <ul className="flex flex-col gap-2.5 mb-8" aria-label="Součásti kurzu">
+                      {tier.features.map((f) => (
+                        <li
+                          key={f}
+                          className={cn("flex items-start gap-2.5 text-sm", dark ? "text-gray-200" : "text-[#374151]")}
+                        >
+                          <Check
+                            size={15}
+                            className={cn("mt-0.5 shrink-0", dark ? "text-gold" : "text-[#047857]")}
+                            aria-hidden="true"
+                          />
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link
+                      href="/kontakt"
+                      className={cn(
+                        "mt-auto block text-center text-sm font-semibold py-3 px-4 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+                        dark
+                          ? "bg-gold text-[#111827] hover:bg-[#fbbf24] focus-visible:ring-gold"
+                          : "bg-[#047857] text-white hover:bg-[#065f46] focus-visible:ring-[#047857]"
+                      )}
+                    >
+                      Mám zájem
+                    </Link>
+                  </article>
+                </StaggerItem>
+              );
+            })}
           </StaggerContainer>
 
           <FadeIn direction="up" className="mt-10">

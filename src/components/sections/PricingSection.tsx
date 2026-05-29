@@ -40,14 +40,18 @@ export default function PricingSection() {
           staggerDelay={0.1}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16"
         >
-          {PRICING_TIERS.map((tier) => (
+          {PRICING_TIERS.map((tier) => {
+            const dark = tier.id === "vip";
+            return (
             <StaggerItem key={tier.id}>
               <article
                 className={cn(
-                  "relative flex flex-col rounded-xl border bg-white p-7 h-full",
-                  tier.highlighted
-                    ? "border-[#047857] shadow-md ring-1 ring-[#047857]"
-                    : "border-[#e5e7eb] shadow-sm"
+                  "relative flex flex-col rounded-2xl border p-7 h-full",
+                  dark
+                    ? "border-[#111827] bg-[#111827] text-white shadow-xl"
+                    : tier.highlighted
+                    ? "border-[#047857] bg-white shadow-md ring-1 ring-[#047857]"
+                    : "border-[#e5e7eb] bg-white shadow-sm"
                 )}
                 aria-label={`Kurz ${tier.name}, ${formatPrice(tier.price)}`}
               >
@@ -56,7 +60,9 @@ export default function PricingSection() {
                     <Badge
                       className={cn(
                         "text-[11px] font-semibold px-2 py-0.5",
-                        tier.highlighted
+                        dark
+                          ? "bg-gold text-[#111827] border-gold"
+                          : tier.highlighted
                           ? "bg-[#047857] text-white border-[#047857]"
                           : "bg-[#f0fdf4] text-[#047857] border-[#bbf7d0]"
                       )}
@@ -67,22 +73,22 @@ export default function PricingSection() {
                 )}
 
                 <div className="mb-5">
-                  <p className="text-xs font-semibold text-[#6b7280] uppercase tracking-widest mb-1">
+                  <p className={cn("text-xs font-semibold uppercase tracking-widest mb-1", dark ? "text-gold" : "text-[#6b7280]")}>
                     Skupina B
                   </p>
-                  <h3 className="text-xl font-bold text-[#111827]">{tier.name}</h3>
-                  <p className="mt-3 text-[2rem] font-bold text-[#111827] leading-none">
+                  <h3 className={cn("text-xl font-bold", dark ? "text-white" : "text-[#111827]")}>{tier.name}</h3>
+                  <p className={cn("mt-3 text-[2rem] font-extrabold leading-none", dark ? "text-white" : "text-[#111827]")}>
                     {formatPrice(tier.price)}
                   </p>
-                  <p className="mt-2 text-sm text-[#6b7280] leading-relaxed">
+                  <p className={cn("mt-2 text-sm leading-relaxed", dark ? "text-gray-300" : "text-[#6b7280]")}>
                     {tier.description}
                   </p>
                 </div>
 
                 <ul className="flex flex-col gap-2 mt-auto" aria-label="Součásti kurzu">
                   {tier.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm text-[#374151]">
-                      <Check size={15} className="text-[#047857] mt-0.5 shrink-0" aria-hidden="true" />
+                    <li key={f} className={cn("flex items-start gap-2.5 text-sm", dark ? "text-gray-200" : "text-[#374151]")}>
+                      <Check size={15} className={cn("mt-0.5 shrink-0", dark ? "text-gold" : "text-[#047857]")} aria-hidden="true" />
                       <span>{f}</span>
                     </li>
                   ))}
@@ -91,22 +97,24 @@ export default function PricingSection() {
                 <a
                   href="/kontakt"
                   className={cn(
-                    "mt-7 block text-center text-sm font-semibold py-2.5 px-4 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] focus-visible:ring-offset-2",
-                    tier.highlighted
-                      ? "bg-[#047857] text-white hover:bg-[#065f46]"
-                      : "border border-[#e5e7eb] text-[#111827] hover:bg-[#f9fafb]"
+                    "mt-7 block text-center text-sm font-semibold py-2.5 px-4 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+                    dark
+                      ? "bg-gold text-[#111827] hover:bg-[#fbbf24] focus-visible:ring-gold"
+                      : tier.highlighted
+                      ? "bg-[#047857] text-white hover:bg-[#065f46] focus-visible:ring-[#047857]"
+                      : "border border-[#e5e7eb] text-[#111827] hover:bg-[#f9fafb] focus-visible:ring-[#047857]"
                   )}
                 >
                   Mám zájem
                 </a>
               </article>
             </StaggerItem>
-          ))}
+          );})}
         </StaggerContainer>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <FadeIn direction="left">
-            <div className="rounded-xl border border-[#e5e7eb] bg-[#f9fafb] p-7 h-full">
+            <div className="rounded-2xl border border-[#e5e7eb] bg-white p-7 h-full">
               <h3 className="text-base font-semibold text-[#111827] mb-5">Další služby</h3>
               <ul className="flex flex-col gap-4">
                 {CONDITIONAL_FEES.map((fee) => (
@@ -125,7 +133,7 @@ export default function PricingSection() {
           </FadeIn>
 
           <FadeIn direction="right">
-            <div className="rounded-xl border border-[#e5e7eb] bg-[#f9fafb] p-7 h-full">
+            <div className="rounded-2xl border border-[#e5e7eb] bg-white p-7 h-full">
               <h3 className="text-base font-semibold text-[#111827] mb-5">Kondiční jízdy</h3>
               <ul className="flex flex-col gap-3">
                 {KONDICE_FEES.map((k) => (

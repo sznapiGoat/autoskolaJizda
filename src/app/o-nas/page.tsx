@@ -45,7 +45,7 @@ export default function ONasPage() {
               <div className="inline-flex items-center gap-2 bg-[#f0fdf4] border border-[#bbf7d0] text-[#065f46] text-sm font-semibold px-3 py-1.5 rounded-full mb-6">
                 <span className="flex" aria-hidden="true">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={12} className="fill-[#047857] text-[#047857]" />
+                    <Star key={i} size={12} className="fill-gold text-gold" />
                   ))}
                 </span>
                 {SITE.reviewCount}× hodnocení 5,0 na Google
@@ -101,7 +101,7 @@ export default function ONasPage() {
                   <p className="text-xs text-[#6b7280] mt-0.5">Google recenzí</p>
                   <div className="mt-1.5 flex gap-0.5">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} size={12} className="fill-[#047857] text-[#047857]" />
+                      <Star key={i} size={12} className="fill-gold text-gold" />
                     ))}
                   </div>
                 </div>
