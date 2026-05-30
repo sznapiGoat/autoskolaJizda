@@ -39,12 +39,35 @@ export function FadeIn({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    if (typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return;
+    }
+
+    let fallback: ReturnType<typeof setTimeout>;
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+          clearTimeout(fallback);
+        }
+      },
       { threshold: 0.08, rootMargin: "0px 0px -32px 0px" }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+
+    // Safety net: never leave content invisible (no scroll, edge cases, screenshots)
+    fallback = setTimeout(() => {
+      setVisible(true);
+      observer.disconnect();
+    }, 900);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallback);
+    };
   }, []);
 
   const style: CSSProperties = {

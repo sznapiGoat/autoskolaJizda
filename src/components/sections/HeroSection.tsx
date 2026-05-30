@@ -8,7 +8,7 @@ import { SITE } from "@/lib/data";
 export default function HeroSection() {
   return (
     <section
-      className="relative bg-white pt-24 pb-12 lg:pb-0 overflow-hidden"
+      className="relative bg-white pt-24 pb-12 lg:pb-20 overflow-hidden"
       aria-labelledby="hero-heading"
     >
       {/* Diagonal teal panel — desktop only, right side */}
@@ -22,14 +22,14 @@ export default function HeroSection() {
       />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
 
           {/* LEFT — text (single calm entrance) */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="pt-8 pb-8 lg:pb-24"
+            className="pt-8 pb-8 lg:py-0"
           >
             {/* Rating pill */}
             <div className="inline-flex items-center gap-2 bg-white border border-[#e5e7eb] shadow-sm text-[#111827] text-sm font-semibold px-3 py-1.5 rounded-full mb-8">
@@ -83,7 +83,7 @@ export default function HeroSection() {
             </p>
           </motion.div>
 
-          {/* RIGHT — photo */}
+          {/* RIGHT — photo (natural aspect ratio, no crop) */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -91,12 +91,13 @@ export default function HeroSection() {
             className="relative flex items-end justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-[560px]">
-              <div className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] rounded-2xl lg:rounded-b-none overflow-hidden shadow-2xl">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <Image
                   src="/images/jizda2.png"
-                  alt="Instruktor Autoškoly Jízda s žákem při výcvikové jízdě"
-                  fill
-                  className="object-cover"
+                  alt="Instruktor Autoškoly Jízda s žákem před autoškolou"
+                  width={1344}
+                  height={768}
+                  className="w-full h-auto"
                   priority
                   sizes="(max-width: 1024px) 100vw, 560px"
                 />
