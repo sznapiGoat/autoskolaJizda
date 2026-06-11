@@ -106,6 +106,7 @@ const schemaOrg = {
 
 import NavBar from "@/components/sections/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
+import { MotionProvider } from "@/components/ui/motion/MotionProvider";
 
 export default function RootLayout({
   children,
@@ -122,9 +123,11 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-dvh flex-col bg-white text-[#111827] antialiased">
-        <NavBar />
-        <div className="flex-1">{children}</div>
-        <FooterSection />
+        <MotionProvider>
+          <NavBar />
+          <div className="flex-1">{children}</div>
+          <FooterSection />
+        </MotionProvider>
       </body>
     </html>
   );

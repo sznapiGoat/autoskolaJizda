@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -41,11 +41,10 @@ export default function NavBar() {
           : "bg-white"
       )}
     >
-      {/* Scroll progress bar */}
-      <motion.div
+      {/* Scroll progress bar (plain div — value-driven, no animation needed) */}
+      <div
         className="absolute top-0 left-0 h-[2px] bg-[#047857] origin-left"
         style={{ width: `${progress}%` }}
-        transition={{ duration: 0 }}
         aria-hidden="true"
       />
 
@@ -58,7 +57,7 @@ export default function NavBar() {
             className="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] rounded-md"
             aria-label="Autoškola Jízda, domovská stránka"
           >
-            <motion.div
+            <m.div
               whileHover={{ rotate: [0, -6, 6, -3, 3, 0] }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
               className="shrink-0"
@@ -71,7 +70,7 @@ export default function NavBar() {
                 priority
                 aria-hidden="true"
               />
-            </motion.div>
+            </m.div>
             <span className="flex flex-col leading-none text-left">
               <span className="text-[15px] font-bold tracking-tight text-[#111827] group-hover:text-[#047857] transition-colors">
                 Autoškola Jízda
@@ -97,10 +96,8 @@ export default function NavBar() {
                   )}
                 >
                   {active && (
-                    <motion.span
-                      layoutId="nav-indicator"
+                    <span
                       className="absolute inset-0 rounded-md bg-[#f0fdf4]"
-                      transition={{ type: "spring", bounce: 0.18, duration: 0.4 }}
                       aria-hidden="true"
                     />
                   )}
@@ -134,7 +131,7 @@ export default function NavBar() {
           >
             <AnimatePresence mode="wait" initial={false}>
               {open ? (
-                <motion.span
+                <m.span
                   key="close"
                   initial={{ rotate: -90, opacity: 0 }}
                   animate={{ rotate: 0, opacity: 1 }}
@@ -143,9 +140,9 @@ export default function NavBar() {
                   className="block"
                 >
                   <X size={22} aria-hidden="true" />
-                </motion.span>
+                </m.span>
               ) : (
-                <motion.span
+                <m.span
                   key="menu"
                   initial={{ rotate: 90, opacity: 0 }}
                   animate={{ rotate: 0, opacity: 1 }}
@@ -154,7 +151,7 @@ export default function NavBar() {
                   className="block"
                 >
                   <Menu size={22} aria-hidden="true" />
-                </motion.span>
+                </m.span>
               )}
             </AnimatePresence>
           </button>
@@ -164,7 +161,7 @@ export default function NavBar() {
       {/* Mobile menu */}
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             id="mobile-menu"
             key="mobile-menu"
             initial={{ opacity: 0, y: -8 }}
@@ -211,7 +208,7 @@ export default function NavBar() {
                 Kontakt
               </Link>
             </nav>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </header>

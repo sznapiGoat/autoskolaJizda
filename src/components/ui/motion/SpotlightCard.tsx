@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  motion,
+  m,
   useMotionTemplate,
   useMotionValue,
   useReducedMotion,
@@ -66,7 +66,7 @@ export function SpotlightCard({
   }
 
   return (
-    <motion.div
+    <m.div
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
       whileHover={lift ? { y: -4 } : undefined}
@@ -75,13 +75,13 @@ export function SpotlightCard({
     >
       {children}
       {/* interior glow — faint teal sheen following the cursor */}
-      <motion.span
+      <m.span
         aria-hidden
         className="pointer-events-none absolute inset-0 z-10 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{ background: glow }}
       />
       {/* border highlight — sits on the very edge, masked to a 1px ring */}
-      <motion.span
+      <m.span
         aria-hidden
         className="pointer-events-none absolute inset-0 z-10 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
@@ -93,6 +93,6 @@ export function SpotlightCard({
           maskComposite: "exclude",
         }}
       />
-    </motion.div>
+    </m.div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { m, useReducedMotion, type Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
@@ -39,7 +39,7 @@ export function Reveal({
   const offset = reduce ? {} : OFFSET[direction];
 
   return (
-    <motion.div
+    <m.div
       className={className}
       initial={{ opacity: 0, ...offset }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
@@ -47,7 +47,7 @@ export function Reveal({
       transition={{ ...SPRING, delay }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -70,7 +70,7 @@ export function RevealGroup({
   once?: boolean;
 }) {
   return (
-    <motion.div
+    <m.div
       className={className}
       variants={groupVariants}
       custom={stagger}
@@ -79,7 +79,7 @@ export function RevealGroup({
       viewport={{ once, amount: 0.15 }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -105,8 +105,8 @@ export function RevealChild({
     return <div className={className}>{children}</div>;
   }
   return (
-    <motion.div className={cn(className)} variants={childVariants}>
+    <m.div className={cn(className)} variants={childVariants}>
       {children}
-    </motion.div>
+    </m.div>
   );
 }

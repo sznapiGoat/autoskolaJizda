@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Globe, ArrowRight } from "lucide-react";
 import { LANGUAGES } from "@/lib/data";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -79,7 +79,7 @@ export default function LanguagesSection() {
           <FadeIn direction="right" delay={0.1}>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {LANGUAGES.map((lang, i) => (
-                <motion.div
+                <m.div
                   key={lang.code}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -94,10 +94,10 @@ export default function LanguagesSection() {
                   <span className="text-sm font-semibold text-[#111827] text-center">
                     {lang.name}
                   </span>
-                </motion.div>
+                </m.div>
               ))}
               {/* + more card */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -108,7 +108,7 @@ export default function LanguagesSection() {
                 <span className="text-sm font-medium text-[#047857] text-center">
                   Další jazyky dle dohody
                 </span>
-              </motion.div>
+              </m.div>
             </div>
           </FadeIn>
         </div>

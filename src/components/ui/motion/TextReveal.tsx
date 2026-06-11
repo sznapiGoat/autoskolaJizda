@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { m, useReducedMotion, type Variants } from "framer-motion";
 import { useMemo } from "react";
 import { cn } from "@/lib/utils";
 import type { ElementType, ReactNode } from "react";
@@ -38,7 +38,7 @@ export function TextReveal({
   const reduce = useReducedMotion();
   const words = children.split(" ");
 
-  const MotionTag = useMemo(() => motion.create(Tag), [Tag]);
+  const MotionTag = useMemo(() => m.create(Tag), [Tag]);
 
   if (reduce) {
     return <Tag className={className} id={id}>{children}</Tag>;
@@ -76,9 +76,9 @@ export function TextReveal({
           className="inline-block overflow-hidden align-bottom"
           style={{ padding: "0.14em 0", margin: "-0.14em 0" }}
         >
-          <motion.span variants={word} className="inline-block">
+          <m.span variants={word} className="inline-block">
             {w}
-          </motion.span>
+          </m.span>
           {i < words.length - 1 ? " " : null}
         </span>
       ))}
@@ -111,7 +111,7 @@ export function RevealLines({
   }
 
   return (
-    <motion.span
+    <m.span
       className={className}
       initial="hidden"
       whileInView="visible"
@@ -120,7 +120,7 @@ export function RevealLines({
     >
       {children.map((line, i) => (
         <span key={i} className="block overflow-hidden" style={{ padding: "0.14em 0", margin: "-0.14em 0" }}>
-          <motion.span
+          <m.span
             className="block"
             variants={{
               hidden: { y: "0.6em", opacity: 0, filter: "blur(8px)" },
@@ -133,9 +133,9 @@ export function RevealLines({
             }}
           >
             {line}
-          </motion.span>
+          </m.span>
         </span>
       ))}
-    </motion.span>
+    </m.span>
   );
 }

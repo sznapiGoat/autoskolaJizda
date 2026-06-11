@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Star, MapPin, Phone, ArrowRight } from "lucide-react";
 import { SITE } from "@/lib/data";
 import { RevealLines } from "@/components/ui/motion/TextReveal";
@@ -27,7 +27,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
 
           {/* LEFT — text (single calm entrance) */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -89,10 +89,10 @@ export default function HeroSection() {
               <MapPin size={14} className="text-[#047857] shrink-0" aria-hidden="true" />
               {SITE.address}, {SITE.city} {SITE.zip}
             </p>
-          </motion.div>
+          </m.div>
 
           {/* RIGHT — photo (natural aspect ratio, no crop) */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.55, ease: "easeOut" }}
@@ -116,7 +116,7 @@ export default function HeroSection() {
               </div>
 
               {/* Floating rating badge */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 12, scale: 0.94 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ delay: 0.55, type: "spring", stiffness: 220, damping: 20, mass: 0.6 }}
@@ -131,9 +131,9 @@ export default function HeroSection() {
                   </span>
                   <p className="text-xs text-[#6b7280] mt-0.5">101 recenzí</p>
                 </div>
-              </motion.div>
+              </m.div>
             </div>
-          </motion.div>
+          </m.div>
 
         </div>
       </div>
