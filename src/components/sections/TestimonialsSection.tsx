@@ -1,6 +1,7 @@
 import { Star } from "lucide-react";
 import { TESTIMONIALS, SITE } from "@/lib/data";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
+import { TextReveal } from "@/components/ui/motion/TextReveal";
 
 // Curated, varied selection (calm approach, fear → enjoyment, foreign students)
 const FEATURED_IDS = [1, 3, 4, 6, 8, 33];
@@ -46,16 +47,18 @@ export default function TestimonialsSection() {
       aria-labelledby="testimonials-heading"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn direction="up" className="max-w-2xl mb-10">
+        <FadeIn direction="none" className="max-w-2xl mb-10">
           <p className="flex items-center gap-2 text-sm font-semibold text-[#047857] uppercase tracking-widest mb-3">
             <GoogleG size={16} /> Google recenze
           </p>
-          <h2
+          <TextReveal
+            as="h2"
             id="testimonials-heading"
+            stagger={0.05}
             className="text-3xl sm:text-5xl font-bold text-[#111827] tracking-tight"
           >
-            {SITE.reviewCount} recenzí. Průměr {SITE.googleRating.toFixed(1)}&thinsp;★.
-          </h2>
+            {`${SITE.reviewCount} recenzí. Průměr ${SITE.googleRating.toFixed(1)} ★.`}
+          </TextReveal>
           <p className="mt-4 text-[1.0625rem] text-[#4b5563] leading-relaxed">
             Každé hodnocení si lze ověřit přímo na Google. Nechlubíme se čísly,
             necháváme mluvit naše absolventy.

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Car, Globe, PhoneCall, ArrowRight } from "lucide-react";
 import { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { SpotlightCard } from "@/components/ui/motion/SpotlightCard";
 
 const PATHS = [
   {
@@ -60,7 +61,8 @@ export default function CorePathsSection() {
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           {PATHS.map(({ href, Icon, label, desc, cta, highlighted, badge }) => (
-            <StaggerItem key={href}>
+            <StaggerItem key={href} className="h-full">
+              <SpotlightCard className="h-full rounded-xl">
               <article
                 className={`relative flex flex-col rounded-xl border h-full p-8 transition-shadow hover:shadow-md ${
                   highlighted
@@ -107,6 +109,7 @@ export default function CorePathsSection() {
                   />
                 </Link>
               </article>
+              </SpotlightCard>
             </StaggerItem>
           ))}
         </StaggerContainer>

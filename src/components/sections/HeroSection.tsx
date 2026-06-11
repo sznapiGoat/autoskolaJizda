@@ -4,6 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Star, MapPin, Phone, ArrowRight } from "lucide-react";
 import { SITE } from "@/lib/data";
+import { RevealLines } from "@/components/ui/motion/TextReveal";
+import { Magnetic } from "@/components/ui/motion/Magnetic";
 
 export default function HeroSection() {
   return (
@@ -26,9 +28,9 @@ export default function HeroSection() {
 
           {/* LEFT — text (single calm entrance) */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="pt-8 pb-8 lg:py-0"
           >
             {/* Rating pill */}
@@ -46,10 +48,14 @@ export default function HeroSection() {
               id="hero-heading"
               className="text-[3.25rem] sm:text-[4.5rem] lg:text-[5.25rem] font-extrabold text-[#111827] tracking-[-0.03em] leading-[0.92] mb-7"
             >
-              <span className="block">Řidičský průkaz</span>
-              <span className="block">
-                <span className="text-[#047857]">s jistotou</span> v Rakovníku.
-              </span>
+              <RevealLines delay={0.12} stagger={0.1}>
+                {[
+                  "Řidičský průkaz",
+                  <>
+                    <span className="text-[#047857]">s jistotou</span> v Rakovníku.
+                  </>,
+                ]}
+              </RevealLines>
             </h1>
 
             {/* Sub-headline */}
@@ -60,13 +66,15 @@ export default function HeroSection() {
 
             {/* CTAs — clear primary vs secondary */}
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
-              <a
-                href="/kontakt"
-                className="group inline-flex items-center justify-center gap-2 bg-[#047857] text-white text-[1rem] font-semibold px-7 py-3.5 rounded-lg shadow-sm hover:bg-[#065f46] transition-all hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] focus-visible:ring-offset-2"
-              >
-                Chci začít jezdit
-                <ArrowRight size={16} aria-hidden="true" className="transition-transform group-hover:translate-x-0.5" />
-              </a>
+              <Magnetic strength={7}>
+                <a
+                  href="/kontakt"
+                  className="group inline-flex w-full items-center justify-center gap-2 bg-[#047857] text-white text-[1rem] font-semibold px-7 py-3.5 rounded-lg shadow-sm hover:bg-[#065f46] hover:shadow-md hover:shadow-[#047857]/20 transition-all hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] focus-visible:ring-offset-2"
+                >
+                  Chci začít jezdit
+                  <ArrowRight size={16} aria-hidden="true" className="transition-transform group-hover:translate-x-0.5" />
+                </a>
+              </Magnetic>
               <a
                 href={`tel:${SITE.phonePlain}`}
                 className="inline-flex items-center justify-center gap-2 border border-[#d1d5db] bg-white text-[#111827] text-[1rem] font-semibold px-7 py-3.5 rounded-lg hover:bg-[#f9fafb] hover:border-[#9ca3af] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047857] focus-visible:ring-offset-2"
@@ -108,7 +116,12 @@ export default function HeroSection() {
               </div>
 
               {/* Floating rating badge */}
-              <div className="absolute -bottom-4 left-4 sm:-left-4 bg-white rounded-xl shadow-lg border border-[#e5e7eb] px-4 py-3 flex items-center gap-3">
+              <motion.div
+                initial={{ opacity: 0, y: 12, scale: 0.94 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: 0.55, type: "spring", stiffness: 220, damping: 20, mass: 0.6 }}
+                className="absolute -bottom-4 left-4 sm:-left-4 bg-white rounded-xl shadow-lg border border-[#e5e7eb] px-4 py-3 flex items-center gap-3"
+              >
                 <p className="text-2xl font-extrabold text-[#111827] leading-none">5,0</p>
                 <div>
                   <span className="flex" aria-hidden="true">
@@ -118,7 +131,7 @@ export default function HeroSection() {
                   </span>
                   <p className="text-xs text-[#6b7280] mt-0.5">101 recenzí</p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 

@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { WHY_US } from "@/lib/data";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
+import { SpotlightCard } from "@/components/ui/motion/SpotlightCard";
 
 const ICON_MAP: Record<string, React.ElementType> = {
   Car,
@@ -49,7 +50,8 @@ export default function WhyUsSection() {
           {WHY_US.map((item) => {
             const Icon = ICON_MAP[item.icon] ?? Car;
             return (
-              <StaggerItem key={item.id}>
+              <StaggerItem key={item.id} className="h-full">
+                <SpotlightCard className="h-full rounded-xl" lift={false}>
                 <div className="group flex flex-col gap-4 rounded-xl border border-[#e5e7eb] bg-white p-7 hover:border-[#047857]/40 hover:shadow-md transition-all h-full">
                   <div
                     className="w-11 h-11 flex items-center justify-center rounded-xl bg-[#f0fdf4] group-hover:bg-[#dcfce7] transition-colors shrink-0"
@@ -66,6 +68,7 @@ export default function WhyUsSection() {
                     </p>
                   </div>
                 </div>
+                </SpotlightCard>
               </StaggerItem>
             );
           })}
